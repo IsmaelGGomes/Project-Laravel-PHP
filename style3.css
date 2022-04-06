@@ -1,0 +1,45 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: arial;
+}
+
+input[nome= 'nome'],button[name=botao1]{
+    
+    line-height: 30px;
+    height: 30px;
+    font-size: 10pt;
+    width: 78%;
+    
+}
+form[name=form1]{
+    width: 250px;
+    background-color: rgb(233, 233, 233);
+    padding: 10px;
+    margin: 0px auto;
+}
+
+#direita{
+    width: 20%;
+    float: left;
+}
+#esquerda{
+    width: 20%;
+    float: left;
+}
+#select1{
+    padding: 10px;
+    width: 20%;
+    
+}
+
+#input_email{
+    width: 30%;
+}
+
+#input_senha{
+    width: 30%;
+}
+.login-main-text{
+    padding: 10px;
+}
