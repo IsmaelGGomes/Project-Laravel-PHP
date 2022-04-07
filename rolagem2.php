@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style type="text/css">
         body {
             font-family: "Open Sans", sans-serif;
-            
+
         }
 
         h2 {
@@ -201,25 +202,50 @@
             border-color: transparent;
             margin: 50px;
             position: relative;
-            
-            
+
+
         }
     </style>
 </head>
 
 <body>
-        
+
     <?php
     include('conexao.php');
     $resultado_pesquisa1 = "SELECT * FROM acesso_novo ORDER by id ASC";
-    $controle = 2;
-    $controle_slide = 1;
     $resultado_query1 = mysqli_query($mysqli, $resultado_pesquisa1);
     ?>
 
+    <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Selecione o Setor </a>
+            <ul class="dropdown-menu" method= 'GET' action="">
+                <li><a href="#">Biblioteca </a></li>
+                <li class="divider"></li>
+                <li><a href="#">Estacionamento </a></li>
+                <li class="divider"></li>
+                <li><a href="#">TI </a></li>
+                <li class="divider"></li>
+                <li><a href="#">Master </a></li>
+            </ul>
+        </li>
+    </ul>
+
     <div>
-        <center><a href="painel2.php" ><button name=button3> NOVO</button></a></center>
+        <center><a href="painel2.php"><button name=button3> NOVO</button></a></center>
     </div>
+
+    <?php
+    //pesquisa por setores 
+
+    $id_pesquisa = $pesquisar = filter_input(INPUT_GET, 'setor');
+
+    //$id_pesquisa_name = $pesquisar = filter_input(INPUT_GET, 'name');
+
+    // Selecionar na tabela 
+    $resultado_pesquisa = "SELECT * FROM acesso_novo WHERE setor";
+    $resultado_query = mysqli_query($mysqli, $resultado_pesquisa);
+    ?>
 
     <div class="container">
         <div class="row">
@@ -239,28 +265,46 @@
                     <div class="carousel-inner">
                         <div class="row">
                             <div class="item carousel-item active">
+                                <?php 
+                                 if ($resultado_query->num_rows == 1) {
 
-                                <?php while ($proc1 = mysqli_fetch_assoc($resultado_query1)) { ?>
-
-
-                                    <div class="col-sm-3">
+                                    while ($proc2 = mysqli_fetch_assoc($resultado_query)) { ?>
+                                        <div class="col-sm-3">
                                         <div class="thumb-wrapper">
                                             <div class="img-box">
                                                 <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
                                             </div>
                                             <div class="thumb-content">
-                                                <h4><?php echo $proc1['id'] ?></h4>
-                                                <p class="item-price"><b>Nome: </b><span><?php echo $proc1['nome'] . "<br/>"; ?></span></p>
-                                                <p><b>Email: </b><?php echo $proc1['email'] ?></p>
-                                                <p class=""><b>Senha: </b><?php echo $proc1['senha'] ?></p>
+                                                <h4><?php echo $proc2['id'] ?></h4>
+                                                <p class="item-price"><b>Nome: </b><span><?php echo $proc2['nome'] . "<br/>"; ?></span></p>
+                                                <p><b>Email: </b><?php echo $proc2['email'] ?></p>
+                                                <p class=""><b>Senha: </b><?php echo $proc2['senha'] ?></p>
 
                                                 <a href="#" class="btn btn-primary">Adicionar</a>
                                             </div>
                                         </div>
                                     </div>
-                                <?php }
+                                <?php } } else { ?>                               
 
-                                ?>
+                                        <?php while ($proc1 = mysqli_fetch_assoc($resultado_query1)) { ?>
+
+
+                                            <div class="col-sm-3">
+                                                <div class="thumb-wrapper">
+                                                    <div class="img-box">
+                                                        <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
+                                                    </div>
+                                                    <div class="thumb-content">
+                                                        <h4><?php echo $proc1['id'] ?></h4>
+                                                        <p class="item-price"><b>Nome: </b><span><?php echo $proc1['nome'] . "<br/>"; ?></span></p>
+                                                        <p><b>Email: </b><?php echo $proc1['email'] ?></p>
+                                                        <p class=""><b>Senha: </b><?php echo $proc1['senha'] ?></p>
+
+                                                        <a href="#" class="btn btn-primary">Adicionar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php } }?>
 
                                 <!-- Carousel controls -->
                                 <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">

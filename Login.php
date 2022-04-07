@@ -44,7 +44,7 @@ if ($_POST) {
 
                 header("Location: painel2.php");
             } else {
-                echo "Falha ao logar ! E-mail ou senha incorretas !";
+                echo "Falha ao logar ! E-mail ou senha ou setor incorretas !";
             }
         }
     }
@@ -64,7 +64,7 @@ if ($_POST) {
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style2.css">
 
 </head>
 

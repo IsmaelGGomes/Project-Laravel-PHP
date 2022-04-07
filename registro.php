@@ -16,18 +16,19 @@ if ($_POST) {
         } else
         if (strlen($_POST['setor']) == 0) {
             echo "<h4> insira o setor </h4>";
-        } 
+        }
     }
 
     //$pagina = ($_GET['x']);
     $nome1 = ($_POST['nome']);
     $email1 = ($_POST['email']);
     $senha1 = ($_POST['senha']);
+    $setor1 = ($_POST['setor']);
     //$cadastro = ($_GET['cadastro']);
-    if (!empty($_POST['email']) and (!empty($_POST['nome'])) and (!empty($_POST['senha']))) {
+    if (!empty($_POST['email']) and (!empty($_POST['nome'])) and (!empty($_POST['senha'])) and (!empty($_POST['setor']))) {
 
-        $sql = "INSERT INTO acesso_novo(nome, email, senha) 
-            VALUES ('$nome1', '$email1', '$senha1')";
+        $sql = "INSERT INTO acesso_novo(nome, email, senha, setor) 
+            VALUES ('$nome1', '$email1', '$senha1', '$setor1')";
 
         if (mysqli_query($mysqli, $sql)) {
             echo "<h4> Usuario cadastrado com sucesso !</h4>";
@@ -65,6 +66,8 @@ if ($_POST) {
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style2.css">
+    
 
 </head>
 
@@ -78,7 +81,7 @@ if ($_POST) {
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"> <i class="fa fa-user fa" aria-hidden="true"> </i> </span>
-                    <input type="text"  name="nome" placeholder="Insira seu nome" />
+                    <input type="text" name="nome" placeholder="Insira seu nome" />
                 </div>
             </div>
         </div>
@@ -87,17 +90,27 @@ if ($_POST) {
         <div class="cols-sm10">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                <input type="email"  name="email" placeholder="Insira seu email" />
+                <input type="email" name="email" placeholder="Insira seu email" />
             </div>
         </div>
-        
+
         <br>
-        <label for=""class="cols-sm-2 control-label"> Senha</label>
+        <label for="" class="cols-sm-2 control-label"> Senha</label>
         <div class="cols-sm10">
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
-                <input type="password"  name="senha" placeholder="Insira sua senha" />
+                <input type="password" name="senha" placeholder="Insira sua senha" />
             </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label><b>Setor</b></label>
+            <select class="form-control" id="registro_input" name="setor">
+                <option>Biblioteca</option>
+                <option>Estacionamento</option>
+                <option>TI</option>
+                <option>Master</option>
+            </select>
         </div>
         <br>
         <br>

@@ -43,3 +43,6 @@ form[name=form1]{
 .login-main-text{
     padding: 10px;
 }
+#registro_input{
+    width: 11%;
+}

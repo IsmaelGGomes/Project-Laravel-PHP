@@ -5,26 +5,32 @@ if ($_POST) {
     include("conexao.php");
 
 
-    if (isset($_POST['email']) || isset($_POST['senha'])) {
+    if (isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['nome']) || isset($_POST['setor'])) {
 
         if (strlen($_POST['email']) == 0) {
             echo "<h4> Preencha seu e-mail </h4>";
-        } else if (strlen($_POST['senha']) == 0) {
+        } else 
+            if (strlen($_POST['senha']) == 0) {
             echo "<h4> Preencha sua senha </h4>";
-        } else if (strlen($_POST['nome']) == 0) {
+        } else 
+            if (strlen($_POST['nome']) == 0) {
             echo "<h4> Preencha seu nome </h4>";
-        }
+        } else
+            if (strlen($_POST['setor']) == 0){
+            echo ("<h4> Insira seu setor </h4>");
+            }
     }
 
     //$voltar_pagina = ($_GET['x']);
     $nome1 = ($_POST['nome']);
     $email1 = ($_POST['email']);
     $senha1 = ($_POST['senha']);
+    $setor1 = ($_POST['setor']);
     //$cadastro = ($_GET['cadastro']);
-    if (!empty($_POST['email']) and (!empty($_POST['nome'])) and (!empty($_POST['senha']))) {
+    if (!empty($_POST['email']) and (!empty($_POST['nome'])) and (!empty($_POST['senha'])) and (!empty($_POST['setor']))) {
 
 
-        $sql = "UPDATE `acesso_novo` SET nome = '$nome1' , email = '$email1', senha= '$senha1' WHERE `id` =" . $_SESSION['id'];
+        $sql = "UPDATE `acesso_novo` SET nome = '$nome1' , email = '$email1', senha= '$senha1', setor= '$setor1' WHERE `id` =" . $_SESSION['id'];
 
         if (mysqli_query($mysqli, $sql)) {
             echo "<h4> Usuario Editado com sucesso !</h4>";
@@ -62,6 +68,8 @@ if ($_POST) {
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    
+
 
     <style type="text/css">
         input {
@@ -73,7 +81,9 @@ if ($_POST) {
             font-size: 11pt;  
            margin: 10px;
         }
-       
+        #editar_input{
+            width: 10%;
+        }   
     </style>
 
 </head>
@@ -112,6 +122,16 @@ if ($_POST) {
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
                 <input type="password" name="senha" placeholder="Insira sua senha" />
             </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label><b>Setor</b></label>
+            <select class="form-control" id="editar_input" name="setor">
+                <option>Biblioteca</option>
+                <option>Estacionamento</option>
+                <option>TI</option>
+                <option>Master</option>
+            </select>
         </div>
         <br>
         <br>

@@ -126,16 +126,15 @@ if (isset($_GET['acao'])) {
                                         <th>Nome</th>
                                         <th>Email</th>
                                         <th>Senha</th>
+                                        <th>Setor</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <tr>
-
                                         <?php
-
-
+                                        
                                         $id_pesquisa = $pesquisar = filter_input(INPUT_GET, 'id');
 
                                         $id_pesquisa_name = $pesquisar = filter_input(INPUT_GET, 'name');
@@ -164,6 +163,7 @@ if (isset($_GET['acao'])) {
                                         <td><?php echo $proc1['nome'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['email'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['senha'] . "<br/>"; ?></td>
+                                        <td><?php echo $proc1['setor'] . "<br/>"; ?></td>
 
 
                                     </tr>
@@ -181,6 +181,7 @@ if (isset($_GET['acao'])) {
                                             <th>Nome</th>
                                             <th>Email</th>
                                             <th>Senha</th>
+                                            <th>Setor</th>
                                         </tr>
                                     </thead>
                                     <?php
@@ -199,6 +200,7 @@ if (isset($_GET['acao'])) {
                                         <td><?php echo $proc1['nome'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['email'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['senha'] . "<br/>"; ?></td>
+                                        <td><?php echo $proc1['setor'] . "<br/>"; ?></td>
 
                                         </tr>
                                     <?php } ?>
