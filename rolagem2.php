@@ -16,196 +16,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/rolagem.css">
 
-    <style type="text/css">
-        body {
-            font-family: "Open Sans", sans-serif;
-
-        }
-
-        h2 {
-            color: #000;
-            font-size: 26px;
-            font-weight: 300;
-            text-align: center;
-            text-transform: uppercase;
-            position: relative;
-            margin: 30px 0 80px;
-        }
-
-        h2 b {
-            color: #ffc000;
-        }
-
-        h2::after {
-            content: "";
-            width: 100px;
-            position: absolute;
-            margin: 0 auto;
-            height: 4px;
-            background: rgba(0, 0, 0, 0.2);
-            left: 0;
-            right: 0;
-            bottom: -20px;
-        }
-
-        .carousel {
-            margin: 50px auto;
-            padding: 0 70px;
-        }
-
-        .carousel .item {
-            min-height: 330px;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .carousel .item .img-box {
-            height: 160px;
-            width: 100%;
-            position: relative;
-        }
-
-        .carousel .item img {
-            max-width: 100%;
-            max-height: 100%;
-            display: inline-block;
-            position: absolute;
-            bottom: 0;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-        }
-
-        .carousel .item h4 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .carousel .item .btn {
-            color: #333;
-            border-radius: 0;
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: bold;
-            background: none;
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            margin-top: 5px;
-            line-height: 16px;
-        }
-
-        .carousel .item .btn:hover,
-        .carousel .item .btn:focus {
-            color: #fff;
-            background: #000;
-            border-color: #000;
-            box-shadow: none;
-        }
-
-        .carousel .item .btn i {
-            font-size: 14px;
-            font-weight: bold;
-            margin-left: 5px;
-        }
-
-        .carousel .thumb-wrapper {
-            text-align: center;
-        }
-
-        .carousel .thumb-content {
-            padding: 15px;
-        }
-
-        .carousel .carousel-control {
-            height: 100px;
-            width: 40px;
-            background: none;
-            margin: auto 0;
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .carousel .carousel-control i {
-            font-size: 30px;
-            position: absolute;
-            top: 50%;
-            display: inline-block;
-            margin: -16px 0 0 0;
-            z-index: 5;
-            left: 0;
-            right: 0;
-            color: rgba(0, 0, 0, 0.8);
-            text-shadow: none;
-            font-weight: bold;
-        }
-
-        .carousel .item-price {
-            font-size: 13px;
-            padding: 2px 0;
-        }
-
-        .carousel .item-price strike {
-            color: #999;
-            margin-right: 5px;
-        }
-
-        .carousel .item-price span {
-            color: #86bd57;
-            font-size: 110%;
-        }
-
-        .carousel .carousel-control.left i {
-            margin-left: -3px;
-        }
-
-        .carousel .carousel-control.left i {
-            margin-right: -3px;
-        }
-
-        .carousel .carousel-indicators {
-            bottom: -50px;
-        }
-
-        .carousel-indicators li,
-        .carousel-indicators li.active {
-            width: 10px;
-            height: 10px;
-            margin: 4px;
-            border-radius: 50%;
-            border-color: transparent;
-        }
-
-        .carousel-indicators li {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .carousel-indicators li.active {
-            background: rgba(206, 21, 21, 0.6);
-        }
-
-        .star-rating li {
-            padding: 0;
-        }
-
-        .star-rating i {
-            font-size: 14px;
-            color: #ffc000;
-        }
-
-        button[name=button3] {
-
-            line-height: 30px;
-            color: #333;
-            height: 50px;
-            font-size: 10pt;
-            width: 4%;
-            border-color: transparent;
-            margin: 50px;
-            position: relative;
-
-
-        }
-    </style>
 </head>
 
 <body>
@@ -215,8 +27,18 @@
     $resultado_pesquisa1 = "SELECT * FROM acesso_novo ORDER by id ASC";
     $resultado_query1 = mysqli_query($mysqli, $resultado_pesquisa1);
     ?>
+    <div class="form-group">
+        <label><b>Setor</b></label>
+        <select class="form-control" id="select2" name="setor">
+            <option>Biblioteca</option>
+            <option>Estacionamento</option>
+            <option>TI</option>
+            <option>Master</option>
+            <input method="GET" type="submit">
+        </select>
+    </div>
 
-    <ul class="nav navbar-nav">
+    <!--  <ul class="nav navbar-nav">
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Selecione o Setor </a>
             <ul class="dropdown-menu" method= 'GET' action="">
@@ -229,23 +51,12 @@
                 <li><a href="#">Master </a></li>
             </ul>
         </li>
-    </ul>
+    </ul> -->
 
     <div>
         <center><a href="painel2.php"><button name=button3> NOVO</button></a></center>
     </div>
 
-    <?php
-    //pesquisa por setores 
-
-    $id_pesquisa = $pesquisar = filter_input(INPUT_GET, 'setor');
-
-    //$id_pesquisa_name = $pesquisar = filter_input(INPUT_GET, 'name');
-
-    // Selecionar na tabela 
-    $resultado_pesquisa = "SELECT * FROM acesso_novo WHERE setor";
-    $resultado_query = mysqli_query($mysqli, $resultado_pesquisa);
-    ?>
 
     <div class="container">
         <div class="row">
@@ -261,50 +72,64 @@
                         <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
                     <!-- Wrapper for carousel items -->
+                    <?php
+                    //pesquisa por setores 
+
+                    $id_pesquisa = $pesquisar = filter_input(INPUT_GET, 'setor');
+
+                    //$id_pesquisa_name = $pesquisar = filter_input(INPUT_GET, 'name');
+
+                    // Selecionar na tabela 
+                    $resultado_pesquisa = "SELECT * FROM acesso_novo WHERE setor";
+                    $resultado_query = mysqli_query($mysqli, $resultado_pesquisa);
+                    ?>
 
                     <div class="carousel-inner">
                         <div class="row">
                             <div class="item carousel-item active">
-                                <?php 
-                                 if ($resultado_query->num_rows == 1) {
+                                <?php
+                                if ($resultado_query->num_rows == 1) {
 
                                     while ($proc2 = mysqli_fetch_assoc($resultado_query)) { ?>
                                         <div class="col-sm-3">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4><?php echo $proc2['id'] ?></h4>
-                                                <p class="item-price"><b>Nome: </b><span><?php echo $proc2['nome'] . "<br/>"; ?></span></p>
-                                                <p><b>Email: </b><?php echo $proc2['email'] ?></p>
-                                                <p class=""><b>Senha: </b><?php echo $proc2['senha'] ?></p>
+                                            <div class="thumb-wrapper">
+                                                <div class="img-box">
+                                                    <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
+                                                </div>
+                                                <div class="thumb-content">
+                                                    <h4><?php echo $proc2['id'] ?></h4>
+                                                    <p class="item-price"><b>Nome: </b><span><?php echo $proc2['nome'] . "<br/>"; ?></span></p>
+                                                    <p><b>Email: </b><?php echo $proc2['email'] ?></p>
+                                                    <p class=""><b>Senha: </b><?php echo $proc2['senha'] ?></p>
 
-                                                <a href="#" class="btn btn-primary">Adicionar</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } } else { ?>                               
-
-                                        <?php while ($proc1 = mysqli_fetch_assoc($resultado_query1)) { ?>
-
-
-                                            <div class="col-sm-3">
-                                                <div class="thumb-wrapper">
-                                                    <div class="img-box">
-                                                        <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
-                                                    </div>
-                                                    <div class="thumb-content">
-                                                        <h4><?php echo $proc1['id'] ?></h4>
-                                                        <p class="item-price"><b>Nome: </b><span><?php echo $proc1['nome'] . "<br/>"; ?></span></p>
-                                                        <p><b>Email: </b><?php echo $proc1['email'] ?></p>
-                                                        <p class=""><b>Senha: </b><?php echo $proc1['senha'] ?></p>
-
-                                                        <a href="#" class="btn btn-primary">Adicionar</a>
-                                                    </div>
+                                                    <a href="#" class="btn btn-primary">Adicionar</a>
                                                 </div>
                                             </div>
-                                        <?php } }?>
+                                        </div>
+                                    <?php } }
+                                  else { ?>
+
+                                    <?php while ($proc1 = mysqli_fetch_assoc($resultado_query1)) { ?>
+
+
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrapper">
+                                                <div class="img-box">
+                                                    <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
+                                                </div>
+                                                <div class="thumb-content">
+                                                    <h4><?php echo $proc1['id'] ?></h4>
+                                                    <p class="item-price"><b>Nome: </b><span><?php echo $proc1['nome'] . "<br/>"; ?></span></p>
+                                                    <p><b>Email: </b><?php echo $proc1['email'] ?></p>
+                                                    <p class=""><b>Senha: </b><?php echo $proc1['senha'] ?></p>
+
+                                                    <a href="#" class="btn btn-primary">Adicionar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <?php }
+                                } ?>
+                                
 
                                 <!-- Carousel controls -->
                                 <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">

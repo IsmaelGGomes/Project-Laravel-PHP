@@ -46,3 +46,7 @@ form[name=form1]{
 #registro_input{
     width: 11%;
 }
+label[nome='registro_email']{
+    line-height: 30px;
+    width: 78%;
+}

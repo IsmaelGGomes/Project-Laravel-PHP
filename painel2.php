@@ -149,7 +149,7 @@ if (isset($_GET['acao'])) {
 
 
                                         if ($resultado_query->num_rows == 1) {
-
+                                            
                                             while ($proc1 = mysqli_fetch_assoc($resultado_query)) {
                                         ?>
                                     <tr>

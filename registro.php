@@ -66,7 +66,7 @@ if ($_POST) {
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="css/style2.css">
     
 
 </head>
@@ -86,7 +86,7 @@ if ($_POST) {
             </div>
         </div>
 
-        <label for="" classe="cols-sm-2 control-label"> Email</label>
+        <label for="" classe="cols-sm-2 control-label" name="registro_email"> Email</label>
         <div class="cols-sm10">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
