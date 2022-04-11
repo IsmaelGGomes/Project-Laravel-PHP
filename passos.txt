@@ -1,0 +1,15 @@
+se o usuário acionar ->
+
+botão-> ação do botão -> mandar a ação pesquisar-> variavel guarda a pesquisa
+
+----------------------------------------------------------------------------------
+
+Criar um fitro para que quando o usuario insira algo ele filtre  aquilo relacionado.
+
+Feito com array.
+
+Mandar o dado para o banco de dados.
+
+observar como foi feito no method POST. PAGINA REGISTRO.
+
+configurar as variaveis para receber atraveis de INPUT conforme o nome dado.
