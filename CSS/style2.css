@@ -27,22 +27,9 @@ form[name=form1]{
     width: 20%;
     float: left;
 }
-#select1{
-    padding: 10px;
-    width: 20%;
-    
-}
 
-#input_email{
-    width: 30%;
-}
 
-#input_senha{
-    width: 30%;
-}
-.login-main-text{
-    padding: 10px;
-}
+
 #registro_input{
     width: 11%;
 }

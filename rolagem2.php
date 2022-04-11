@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/rolagem.css">
+    <link rel="stylesheet" href="css/rolagem1.css">
 
 </head>
 
@@ -28,14 +28,15 @@
     $resultado_query1 = mysqli_query($mysqli, $resultado_pesquisa1);
     ?>
     <div class="form-group">
-        <label><b>Setor</b></label>
+        <center><label id="select21"><b>Setor</b></label></center>
         <select class="form-control" id="select2" name="setor">
             <option>Biblioteca</option>
             <option>Estacionamento</option>
             <option>TI</option>
             <option>Master</option>
-            <input method="GET" type="submit">
+           
         </select>
+        <!-- <center><input method="GET" type="submit"></center> --> 
     </div>
 
     <!--  <ul class="nav navbar-nav">

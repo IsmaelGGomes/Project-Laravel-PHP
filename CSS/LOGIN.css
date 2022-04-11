@@ -1,0 +1,33 @@
+#left{
+    width: 50%;
+    float: left;
+}
+#right{
+    width: 50%;
+    float: right;
+    
+}
+.login-main-text{
+    padding: 15px;
+}
+#input_email{
+    width: 50%;
+}
+
+#input_senha{
+    width: 50%;
+}
+#select1{
+    padding: 10px;
+    width: 50%;  
+}
+.login-main-text1{
+    padding: 0px;
+    margin: -1px;
+}
+#dropdown{
+    width: 50%; 
+}
+#dropdown_country{
+    width: 50%; 
+}

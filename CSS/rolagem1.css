@@ -190,5 +190,10 @@
             width: 10%;
             position: relative;
             float: center;
-          
+            margin: 0 auto;
+        }
+        #select21{
+            text-align: right;
+            position: relative;
+            
         }

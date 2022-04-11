@@ -30,11 +30,13 @@ if (isset($_GET['acao'])) {
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    
 
     <title>Painel</title>
 </head>
 
 <body>
+   
     <h3><b>Bem vindo ao Painel, <?php echo $_SESSION['nome']; ?></b></h3>
     <p>
     <section id="esquerda">
@@ -134,7 +136,7 @@ if (isset($_GET['acao'])) {
 
                                     <tr>
                                         <?php
-                                        
+
                                         $id_pesquisa = $pesquisar = filter_input(INPUT_GET, 'id');
 
                                         $id_pesquisa_name = $pesquisar = filter_input(INPUT_GET, 'name');
@@ -149,7 +151,7 @@ if (isset($_GET['acao'])) {
 
 
                                         if ($resultado_query->num_rows == 1) {
-                                            
+
                                             while ($proc1 = mysqli_fetch_assoc($resultado_query)) {
                                         ?>
                                     <tr>

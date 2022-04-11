@@ -17,11 +17,11 @@ if ($_POST) {
             if (strlen($_POST['setor']) == 0) {
             echo "Insira o setor";
         } else {
-           
+
             $email = ($_POST['email']);
             $senha = ($_POST['senha']);
             $setor = ($_POST['setor']);
-            
+
             $sql_code = "SELECT * FROM acesso_novo WHERE email = '$email' AND senha = '$senha' AND setor = '$setor'";
             $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
@@ -48,6 +48,11 @@ if ($_POST) {
             }
         }
     }
+        $sql = "INSERT INTO acesso_local(estado, municipio) 
+        VALUES ('$estado', '$municipio')"; 
+
+        $estado= ($_POST['estado']); 
+        $municipio= ($_POST['municipio']);
 }
 
 ?>
@@ -64,7 +69,7 @@ if ($_POST) {
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="css/style2.css">
 
 </head>
 
@@ -75,21 +80,22 @@ if ($_POST) {
             <h2>Tela de Login<br></h2>
         </div>
     </div>
-    <div class="main">
+    <div class="main" id="left">
+        <link rel="stylesheet" href="css/LOGIN.css">
         <div class="col-md-6 col-sm-12">
             <div class="login-form">
                 <form action="" method="POST">
-                    <div class="form-group">
 
+                    <div class="form-group">
                         <label><b>E-mail</b></label>
-                        <input type="text" class="form-control" placeholder="Insira o e-mail" name="email" id="input_email">
+                        <input type="text" class="form-control" placeholder="Insira o e-mail" name="email">
                     </div>
                     <div class="form-group">
-                        <label ><b>Senha</b></label>
-                        <input type="password" class="form-control" placeholder="Insira a senha" name="senha" id="input_senha">
+                        <label><b>Senha</b></label>
+                        <input type="password" class="form-control" placeholder="Insira a senha" name="senha">
                     </div>
                     <div class="form-group">
-                    <label><b>Setor</b></label>
+                        <label><b>Setor</b></label>
                         <select class="form-control" id="select1" name="setor">
                             <option>Biblioteca</option>
                             <option>Estacionamento</option>
@@ -104,6 +110,46 @@ if ($_POST) {
             </div>
         </div>
     </div>
+    <div class="sidenav" id="right">
+        <link rel="stylesheet" href="css/LOGIN.css">
+        <div class="login-main-text1">
+            <h2>Formulario de Contato<br></h2>
+        </div>
+        <form action="" method="POST">
+
+            <div class="form-group">
+                <label><b>Nome</b></label>
+                <input type="text" class="form-control" placeholder="Insira seu nome completo" name="" id="input_email">
+            </div>
+            <div class="form-group">
+                <label><b>Email</b></label>
+                <input type="email" class="form-control" placeholder="Insira o e-mail" name="" id="input_senha">
+            </div>
+            <label><b>Setor</b></label>
+            <select class="form-control" id="dropdown" name="setor">
+                <option>Biblioteca</option>
+                <option>Estacionamento</option>
+                <option>TI</option>
+                <option>Master</option>
+            </select>
+            <br>
+            <div class="form-group " id="dropdown_country">
+                <div class="form-control">
+                    <select name="Pais" class="countries order-alpha" id="countryId">
+                        <option value="">Selecione o pais</option>
+                    </select>
+                    <select name="Estado" class="states order-alpha" id="stateId">
+                        <option value="">Selecione o estado</option>
+                    </select>
+                    <select name="Cidade" class="cities order-alpha" id="cityId">
+                        <option value="">Selecione a cidade</option>
+                    </select>
+                 
+                </div>
+            </div>
+        </form>
+
+
 </body>
 
 </html>
