@@ -1,10 +1,11 @@
 <?php
 
+use Symfony\Component\VarDumper\VarDumper;
+
 if ($_POST) {
     //testando novo comentario 
 
     include('conexao.php');
-
 
     if (isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['setor'])) {
 
@@ -48,11 +49,6 @@ if ($_POST) {
             }
         }
     }
-        $sql = "INSERT INTO acesso_local(estado, municipio) 
-        VALUES ('$estado', '$municipio')"; 
-
-        $estado= ($_POST['estado']); 
-        $municipio= ($_POST['municipio']);
 }
 
 ?>
@@ -123,7 +119,7 @@ if ($_POST) {
             </div>
             <div class="form-group">
                 <label><b>Email</b></label>
-                <input type="email" class="form-control" placeholder="Insira o e-mail" name="" id="input_senha">
+                <input type="email" class="form-control" placeholder="Insira o e-mail" name="emai1" id="input_senha">
             </div>
             <label><b>Setor</b></label>
             <select class="form-control" id="dropdown" name="setor">
@@ -135,19 +131,45 @@ if ($_POST) {
             <br>
             <div class="form-group " id="dropdown_country">
                 <div class="form-control">
-                    <select name="Pais" class="countries order-alpha" id="countryId">
+                    <select name="pais" class="countries order-alpha" id="countryId">
                         <option value="">Selecione o pais</option>
                     </select>
-                    <select name="Estado" class="states order-alpha" id="stateId">
-                        <option value="">Selecione o estado</option>
+                    <select name="estado" class="states order-alpha" id="stateId">
+                        <option value="">Selecione o estado </option>
+                        <?php
+                        include('local.php');
+
+                        foreach ($estados as $estado) {
+                            echo "<option value='" . $estado['sigla'] . "'>" . $estado['nome'] . "</option>";
+                        }
+                        ?>
                     </select>
-                    <select name="Cidade" class="cities order-alpha" id="cityId">
+                    <select name="municipio" class="cities order-alpha" id="cityId">
                         <option value="">Selecione a cidade</option>
                     </select>
-                 
+
                 </div>
+                <button class="col-md-1,5 btn btn-success"> Cadastrar </button>
+
             </div>
         </form>
+        <?php
+
+        $estado1 = ($_POST['estado']);
+        $municipio1 = ($_POST['municipio']);
+        $email1 = ($_POST['email1']);
+        $setor1 = ($_POST['setor']);
+        $descricao = ($_POST['descricao']);
+
+        $sql = "INSERT INTO acesso_local(estado, municipio, email, setor, descricao) VALUES ('$estado1','$municipio1','$email1','$setor1','$descricao')"; 
+
+        if (mysqli_query($mysqli, $sql)) {
+            echo "<h4> Usuario cadastrado com sucesso !</h4>";
+        } else {
+            echo "Erro !" . mysqli_connect_error($mysqli);
+        }
+         mysqli_close($mysqli);
+        ?>
 
 
 </body>
