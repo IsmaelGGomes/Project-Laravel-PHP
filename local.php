@@ -114,7 +114,7 @@ $estados = array(
 
 
 $municipios = array(
-    1100015 => "Alta Floresta D'oeste",
+    1100015 => "Alta Floresta D'oeste","estado"=> "pr",
     1100023 => "Ariquemes",
     1100031 => "Cabixi",
     1100049 => "Cacoal",

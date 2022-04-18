@@ -115,14 +115,14 @@ if ($_POST) {
 
             <div class="form-group">
                 <label><b>Nome</b></label>
-                <input type="text" class="form-control" placeholder="Insira seu nome completo" name="" id="input_email">
+                <input type="text" class="form-control" placeholder="Insira seu nome completo" name="nome1" id="input_email">
             </div>
             <div class="form-group">
                 <label><b>Email</b></label>
-                <input type="email" class="form-control" placeholder="Insira o e-mail" name="emai1" id="input_senha">
+                <input type="email" class="form-control" placeholder="Insira o e-mail" name="email1" id="input_senha">
             </div>
             <label><b>Setor</b></label>
-            <select class="form-control" id="dropdown" name="setor">
+            <select class="form-control" id="dropdown" name="setor1">
                 <option>Biblioteca</option>
                 <option>Estacionamento</option>
                 <option>TI</option>
@@ -131,13 +131,14 @@ if ($_POST) {
             <br>
             <div class="form-group " id="dropdown_country">
                 <div class="form-control">
-                    <select name="pais" class="countries order-alpha" id="countryId">
+                    <!-- <select name="pais" class="countries order-alpha" id="countryId">
                         <option value="">Selecione o pais</option>
-                    </select>
+                    </select> -->
                     <select name="estado" class="states order-alpha" id="stateId">
                         <option value="">Selecione o estado </option>
                         <?php
                         include('local.php');
+                        include('conexao.php');
 
                         foreach ($estados as $estado) {
                             echo "<option value='" . $estado['sigla'] . "'>" . $estado['nome'] . "</option>";
@@ -147,30 +148,79 @@ if ($_POST) {
                     <select name="municipio" class="cities order-alpha" id="cityId">
                         <option value="">Selecione a cidade</option>
                     </select>
+                    
 
                 </div>
-                <button class="col-md-1,5 btn btn-success"> Cadastrar </button>
+                <?php
+                    $municipios2 = array(
+                        1100015 => "Alta Floresta D'oeste", "estado" => "pr",
+                        1100023 => "Ariquemes",
+                        1100031 => "Cabixi",
+                        1100049 => "Cacoal",
+                        1100056 => "Cerejeiras",
+                        1100064 => "Colorado do Oeste",
+                        1100072 => "Corumbiara",
+                        1100080 => "Costa Marques",
+                    );
+                    
+
+                    ?>
+                <div class="form-group">
+                    <br>
+                    <label><b>Descrição</b></label>
+                    <textarea id="" name="descricao" class="form-control" required placeholder="Insira um comentário"></textarea>
+                </div>
+                <br>
+
 
             </div>
+            <button class="col-md-1,5 btn btn-success"> Enviar </button>
         </form>
         <?php
+        if ($_POST) {
 
-        $estado1 = ($_POST['estado']);
-        $municipio1 = ($_POST['municipio']);
-        $email1 = ($_POST['email1']);
-        $setor1 = ($_POST['setor']);
-        $descricao = ($_POST['descricao']);
+            if (isset($_POST['nome1']) || isset($_POST['estado']) || isset($_POST['municipio']) || isset($_POST['email1']) || isset($_POST['setor1']) || isset($_POST['descricao'])) {
 
-        $sql = "INSERT INTO acesso_local(estado, municipio, email, setor, descricao) VALUES ('$estado1','$municipio1','$email1','$setor1','$descricao')"; 
+                if (strlen($_POST['nome1']) == 0) {
+                    echo "<h4> Preencha seu nome </h4>";
+                } else 
+                    if (strlen($_POST['estado']) == 0) {
+                    echo "<h4> Selecione o Estado </h4>";
+                } else 
+                    if (strlen($_POST['email1']) == 0) {
+                    echo "<h4> Preencha seu email </h4>";
+                } else 
+                    if (strlen($_POST['setor1']) == 0) {
+                    echo "<h4> Selecione o setor </h4>";
+                } else 
+                    if (strlen($_POST['descricao']) == 0) {
+                    echo "<h4> Descreva o relato </h4>";
+                }
+            }
 
-        if (mysqli_query($mysqli, $sql)) {
-            echo "<h4> Usuario cadastrado com sucesso !</h4>";
-        } else {
-            echo "Erro !" . mysqli_connect_error($mysqli);
+            $nome1 = ($_POST['nome1']);
+            $estado1 = ($_POST['estado']);
+            $municipio1 = ($_POST['municipio']);
+            $email1 = ($_POST['email1']);
+            $setor1 = ($_POST['setor1']);
+            $descricao = ($_POST['descricao']);
+
+            if (!empty($_POST['nome1']) and (!empty($_POST['estado'])) and (!empty($_POST['email1'])) and (!empty($_POST['setor1'])) and (!empty($_POST['descricao']))) {
+
+                $sql = "INSERT INTO acesso_local(nome, email, setor, estado, municipio, descricao) VALUES ('$nome1','$email1','$setor1','$estado1','$municipio1','$descricao')";
+
+                if (mysqli_query($mysqli, $sql)) {
+                    echo "<h4> Enviado !</h4>";
+                } else {
+                    echo "Erro ao conectar banco de dados !" . mysqli_connect_error($mysqli);
+                }
+                mysqli_close($mysqli);
+            }
         }
-         mysqli_close($mysqli);
-        ?>
 
+        ?>
+    </div>
+</body>
 
 </body>
 
