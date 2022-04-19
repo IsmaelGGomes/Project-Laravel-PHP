@@ -27,32 +27,19 @@
     $resultado_pesquisa1 = "SELECT * FROM acesso_novo ORDER by id ASC";
     $resultado_query1 = mysqli_query($mysqli, $resultado_pesquisa1);
     ?>
-    <div class="form-group">
-        <center><label id="select21"><b>Setor</b></label></center>
-        <select class="form-control" id="select2" name="setor">
-            <option>Biblioteca</option>
-            <option>Estacionamento</option>
-            <option>TI</option>
-            <option>Master</option>
-           
-        </select>
-        <!-- <center><input method="GET" type="submit"></center> --> 
-    </div>
+    <form action="" method="GET">
+        <div class="form-group">
+            <center><label id="select21"><b>Setor</b></label></center>
+            <select class="form-control" id="select2" name="setor">
+                <option>Biblioteca</option>
+                <option>Estacionamento</option>
+                <option>TI</option>
+                <option>Master</option>
 
-    <!--  <ul class="nav navbar-nav">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Selecione o Setor </a>
-            <ul class="dropdown-menu" method= 'GET' action="">
-                <li><a href="#">Biblioteca </a></li>
-                <li class="divider"></li>
-                <li><a href="#">Estacionamento </a></li>
-                <li class="divider"></li>
-                <li><a href="#">TI </a></li>
-                <li class="divider"></li>
-                <li><a href="#">Master </a></li>
-            </ul>
-        </li>
-    </ul> -->
+            </select>
+            <button>selecionar</button>
+        </div>
+    </form>
 
     <div>
         <center><a href="painel2.php"><button name=button3> NOVO</button></a></center>
@@ -107,8 +94,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php } }
-                                  else { ?>
+                                    <?php }
+                                } else { ?>
 
                                     <?php while ($proc1 = mysqli_fetch_assoc($resultado_query1)) { ?>
 
@@ -130,19 +117,19 @@
                                         </div>
                                 <?php }
                                 } ?>
-                                
 
                                 <!-- Carousel controls -->
                                 <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                                    <i class="fa fa-angle-left"></i>
+                                <i class="fa fa-angle-left"></i>
                                 </a>
                                 <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
                                     <i class="fa fa-angle-right"></i>
                                 </a>
+
                             </div>
+
                         </div>
                     </div>
-                </div>
 </body>
 
 </html>

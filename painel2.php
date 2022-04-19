@@ -190,8 +190,6 @@ if (isset($_GET['acao'])) {
 
                                     $resultado_pesquisa1 = "SELECT * FROM acesso_novo";
 
-
-
                                     $resultado_query1 = mysqli_query($mysqli, $resultado_pesquisa1);
                                     while ($proc1 = mysqli_fetch_assoc($resultado_query1)) {
                                     ?>

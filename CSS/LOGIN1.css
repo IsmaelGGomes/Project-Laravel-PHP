@@ -5,10 +5,13 @@
 #right{
     width: 50%;
     float: right;
+    height: 10px; 
+    
     
 }
 .login-main-text{
-    padding: 15px;
+    height: -10px;
+    width: 20%;
 }
 #input_email{
     width: 50%;
@@ -24,6 +27,7 @@
 .login-main-text1{
     padding: 0px;
     margin: -1px;
+   
 }
 #dropdown{
     width: 50%; 
@@ -31,3 +35,4 @@
 #dropdown_country{
     width: 50%; 
 }
+

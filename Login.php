@@ -107,7 +107,7 @@ if ($_POST) {
         </div>
     </div>
     <div class="sidenav" id="right">
-        <link rel="stylesheet" href="css/LOGIN.css">
+        <link rel="stylesheet" href="css/LOGIN1.css">
         <div class="login-main-text1">
             <h2>Formulario de Contato<br></h2>
         </div>
@@ -149,30 +149,14 @@ if ($_POST) {
                         <option value="">Selecione a cidade</option>
                     </select>
                     
-
                 </div>
-                <?php
-                    $municipios2 = array(
-                        1100015 => "Alta Floresta D'oeste", "estado" => "pr",
-                        1100023 => "Ariquemes",
-                        1100031 => "Cabixi",
-                        1100049 => "Cacoal",
-                        1100056 => "Cerejeiras",
-                        1100064 => "Colorado do Oeste",
-                        1100072 => "Corumbiara",
-                        1100080 => "Costa Marques",
-                    );
-                    
-
-                    ?>
+              
                 <div class="form-group">
                     <br>
                     <label><b>Descrição</b></label>
                     <textarea id="" name="descricao" class="form-control" required placeholder="Insira um comentário"></textarea>
                 </div>
                 <br>
-
-
             </div>
             <button class="col-md-1,5 btn btn-success"> Enviar </button>
         </form>
