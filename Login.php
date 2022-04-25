@@ -134,7 +134,7 @@ if ($_POST) {
                     <!-- <select name="pais" class="countries order-alpha" id="countryId">
                         <option value="">Selecione o pais</option>
                     </select> -->
-                    <select name="estado" class="states order-alpha" id="stateId">
+                    <select name="estado12" class="states order-alpha" id="stateId">
                         <option value="">Selecione o estado </option>
                         <?php
                         include('local.php');
@@ -143,14 +143,25 @@ if ($_POST) {
                         foreach ($estados as $estado) {
                             echo "<option value='" . $estado['sigla'] . "'>" . $estado['nome'] . "</option>";
                         }
+                        //$selecionar_estado = ($_POST[$estado['sigla']]);
                         ?>
                     </select>
                     <select name="municipio" class="cities order-alpha" id="cityId">
-                        <option value="">Selecione a cidade</option>
+                            <?php 
+                                //$select ="SELECT * FROM municipio WHERE nome= $selecionar_estado";
+
+                                //foreach ($select as $dados) { 
+                                    //echo "<option value='" . $dados['nome'] . "'>" . "</option>"; ?>" 
+                                
+                                    <?php //if($select == $dados['nome'])
+                                        //{ echo "selected"; } ?>>
+                                    <?php //echo $dados['nome']; ?>
+                                    
+                            <?php //} ?>
                     </select>
-                    
+          
                 </div>
-              
+
                 <div class="form-group">
                     <br>
                     <label><b>Descrição</b></label>
@@ -183,7 +194,7 @@ if ($_POST) {
             }
 
             $nome1 = ($_POST['nome1']);
-            $estado1 = ($_POST['estado']);
+            $estado1 = ($_POST['estado12']);
             $municipio1 = ($_POST['municipio']);
             $email1 = ($_POST['email1']);
             $setor1 = ($_POST['setor1']);
