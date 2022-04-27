@@ -66,7 +66,7 @@ if ($_POST) {
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style2.css">
     
 
 
@@ -105,7 +105,7 @@ if ($_POST) {
                         </div>
                     </div>
                     <br>
-                    <div id="caixa_suspensa" class="form-group contrl">
+                    <div class="form-group contrl">
                         <label><b>Setor</b></label>
                         <select class="form-control" id="registro_input" name="setor">
                             <option>Biblioteca</option>

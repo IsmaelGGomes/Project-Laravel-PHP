@@ -1,10 +1,12 @@
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 1px;
     font-family: arial;
+    position:relative;
+    
+    
 }
 
-input[nome= 'nome'],button[name=botao1]{
+input[nome='nome'],button[name=botao1]{
     
     line-height: 30px;
     height: 30px;
@@ -36,4 +38,8 @@ form[name=form1]{
 label[nome='registro_email']{
     line-height: 30px;
     width: 78%;
+}
+
+#caixa_suspensa{
+
 }

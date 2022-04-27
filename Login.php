@@ -77,7 +77,7 @@ if ($_POST) {
         </div>
     </div>
     <div class="main" id="left">
-        <link rel="stylesheet" href="css/LOGIN.css">
+        <link rel="stylesheet" href="css/LOGIN2.css">
         <div class="col-md-6 col-sm-12">
             <div class="login-form">
                 <form action="" method="POST">
@@ -129,13 +129,14 @@ if ($_POST) {
                 <option>Master</option>
             </select>
             <br>
+            <label><b>Localização</b></label>
             <div class="form-group " id="dropdown_country">
                 <div class="form-control">
                     <!-- <select name="pais" class="countries order-alpha" id="countryId">
                         <option value="">Selecione o pais</option>
                     </select> -->
                     <select name="estado12" class="states order-alpha" id="stateId">
-                        <option value="">Selecione o estado </option>
+                        <option value="">Selecione o estado</option>
                         <?php
                         include('local.php');
                         include('conexao.php');
@@ -174,12 +175,12 @@ if ($_POST) {
         <?php
         if ($_POST) {
 
-            if (isset($_POST['nome1']) || isset($_POST['estado']) || isset($_POST['municipio']) || isset($_POST['email1']) || isset($_POST['setor1']) || isset($_POST['descricao'])) {
+            if (isset($_POST['nome1']) || isset($_POST['estado12']) || isset($_POST['municipio']) || isset($_POST['email1']) || isset($_POST['setor1']) || isset($_POST['descricao'])) {
 
                 if (strlen($_POST['nome1']) == 0) {
                     echo "<h4> Preencha seu nome </h4>";
                 } else 
-                    if (strlen($_POST['estado']) == 0) {
+                    if (strlen($_POST['estado12']) == 0) {
                     echo "<h4> Selecione o Estado </h4>";
                 } else 
                     if (strlen($_POST['email1']) == 0) {
@@ -195,14 +196,14 @@ if ($_POST) {
 
             $nome1 = ($_POST['nome1']);
             $estado1 = ($_POST['estado12']);
-            $municipio1 = ($_POST['municipio']);
+            //$municipio1 = ($_POST['municipio']);
             $email1 = ($_POST['email1']);
             $setor1 = ($_POST['setor1']);
             $descricao = ($_POST['descricao']);
 
-            if (!empty($_POST['nome1']) and (!empty($_POST['estado'])) and (!empty($_POST['email1'])) and (!empty($_POST['setor1'])) and (!empty($_POST['descricao']))) {
+            if (!empty($_POST['nome1']) and (!empty($_POST['estado12'])) and (!empty($_POST['email1'])) and (!empty($_POST['setor1'])) and (!empty($_POST['descricao']))) {
 
-                $sql = "INSERT INTO acesso_local(nome, email, setor, estado, municipio, descricao) VALUES ('$nome1','$email1','$setor1','$estado1','$municipio1','$descricao')";
+                $sql = "INSERT INTO acesso_local(nome, email, setor, estado, descricao) VALUES ('$nome1','$email1','$setor1','$estado1','$descricao')";
 
                 if (mysqli_query($mysqli, $sql)) {
                     echo "<h4> Enviado !</h4>";

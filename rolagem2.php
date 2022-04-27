@@ -110,6 +110,7 @@
                                                     <p class="item-price"><b>Nome: </b><span><?php echo $proc1['nome'] . "<br/>"; ?></span></p>
                                                     <p><b>Email: </b><?php echo $proc1['email'] ?></p>
                                                     <p class=""><b>Senha: </b><?php echo $proc1['senha'] ?></p>
+                                                    <p class=""><b>Setor: </b><?php echo $proc1['setor'] ?></p>
 
                                                     <a href="#" class="btn btn-primary">Adicionar</a>
                                                 </div>
