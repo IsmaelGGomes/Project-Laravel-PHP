@@ -114,8 +114,8 @@ if (isset($_GET['acao'])) {
                                 <div class="col col-xs-6 text-right">
 
                                     <a href="registro.php?=cadastro"> <button type="button" class="btn btn-sm btn-primary btn-create">Novo Cadastro</button></a>
-                                    <a href="rolagem2.php?=cadastro"> <button type="button" class="btn btn-sm btn-primary btn-create">Lista de Registros</button> </a>
-
+                                    <a href="rolagem2.php?=registro"> <button type="button" class="btn btn-sm btn-primary btn-create">Lista de Registros</button> </a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -155,12 +155,15 @@ if (isset($_GET['acao'])) {
                                             while ($proc1 = mysqli_fetch_assoc($resultado_query)) {
                                         ?>
                                     <tr>
+                                    <a href="imprimir.html"> <button type="button" class="btn btn-primary">Adicionar Produto</button> </a>
                                         <td align="center">
+                                            
                                             <a class="btn btn-default" href="pag_editar.php?=cadastro"><em class="fa fa-pencil"></em></a>
 
                                             <a class="btn btn-danger" href="painel2.php?acao=deletar&id=<?php echo $proc1['id'] ?>"><em class="fa fa-trash"></em></a>
-
+                                            
                                         </td>
+                                        
                                         <td><?php echo $proc1['id'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['nome'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['email'] . "<br/>"; ?></td>
