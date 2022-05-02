@@ -30,13 +30,13 @@ if (isset($_GET['acao'])) {
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
+
 
     <title>Painel</title>
 </head>
 
 <body>
-   
+
     <h3><b>Bem vindo ao Painel, <?php echo $_SESSION['nome']; ?></b></h3>
     <p>
     <section id="esquerda">
@@ -115,7 +115,7 @@ if (isset($_GET['acao'])) {
 
                                     <a href="registro.php?=cadastro"> <button type="button" class="btn btn-sm btn-primary btn-create">Novo Cadastro</button></a>
                                     <a href="rolagem2.php?=registro"> <button type="button" class="btn btn-sm btn-primary btn-create">Lista de Registros</button> </a>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -155,15 +155,15 @@ if (isset($_GET['acao'])) {
                                             while ($proc1 = mysqli_fetch_assoc($resultado_query)) {
                                         ?>
                                     <tr>
-                                    <a href="imprimir.html"> <button type="button" class="btn btn-primary">Adicionar Produto</button> </a>
+                                        <a href="cadastro_produtos.php"> <button type="button" class="btn btn-primary">Adicionar Produto</button> </a>
                                         <td align="center">
-                                            
+
                                             <a class="btn btn-default" href="pag_editar.php?=cadastro"><em class="fa fa-pencil"></em></a>
 
                                             <a class="btn btn-danger" href="painel2.php?acao=deletar&id=<?php echo $proc1['id'] ?>"><em class="fa fa-trash"></em></a>
-                                            
+
                                         </td>
-                                        
+
                                         <td><?php echo $proc1['id'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['nome'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['email'] . "<br/>"; ?></td>

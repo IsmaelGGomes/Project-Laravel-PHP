@@ -17,24 +17,31 @@
                 <div class="card-body p-0">
                     <div class="row p-5">
                         <div class="col-md-6">
-                            <img src="http://via.placeholder.com/400x90?text=logo">
+                        <img src="https://i.ibb.co/qDDxwXQ/user-main.jpg" class="img-responsive img-fluid" alt="user-main">
                         </div>
 
                         <div class="col-md-6 text-right">
-                            <p class="font-weight-bold mb-1">Invoice #550</p>
-                            <p class="text-muted">Due to: 4 Dec, 2019</p>
+                            <!--adicionar um campo no qual fique uma sequencia de numeros para identificar 
+                                o numero da impressão-->
+                            <p class="font-weight-bold mb-1">Invoice #550</p> 
+                            <?php $hoje= date('d/m/Y')?>
+                            <p class="text-muted"><?php echo $hoje?></p>
                         </div>
                     </div>
 
                     <hr class="my-5">
 
+                    <?php session_start();
+                    include("conexao.php");?>
+                    
+
                     <div class="row pb-5 p-5">
                         <div class="col-md-6">
-                            <p class="font-weight-bold mb-4">Informações do Usuário</p>
-                            <p class="mb-1">John Doe, Mrs Emma Downson</p>
-                            <p>Acme Inc</p>
-                            <p class="mb-1">Berlin, Germany</p>
-                            <p class="mb-1">6781 45P</p>
+                            <p class="font-weight-bold mb-4">Informações do Cadastro</p>
+                            <p class="mb-1"><b>ID: </b><?php echo $_SESSION['id'];?></p>
+                            <p class="mb-1"><b>Nome: </b><?php echo $_SESSION['nome'];?></p>
+                            <p class="mb-1"><b>Email: </b><?php echo $_SESSION['email'];?></p>
+                            <p class="mb-1"><b>Setor: </b><?php echo $_SESSION['setor'];?></p>                            
                         </div>
 
                         <div class="col-md-6 text-right">
@@ -78,8 +85,9 @@
                                         <td><?php echo $select['descricao'] . "<br>"?></td>                                        
                                         <td><?php echo $select['valor'] . "<br>"?></td>
                                         <td><?php echo $select['qtd'] . "<br>"?></td>
-                                        <td><?php echo "R$ " . $select['qtd'] * $select['valor'] . "<br>"?></td>
-                                        
+                                        <?php $subtotal= ($select['qtd'] * $select['valor'])?>
+                                        <?php @$somartotal= $somartotal + $subtotal?>
+                                        <td><?php echo "R$ " . $subtotal ."<br>"?></td>                                                                             
                                     </tr>
                                 </tbody>
                                 <?php } ?>
@@ -92,14 +100,8 @@
 
                         <div class="py-3 px-5 text-right">
                             <div  class="h3 font-weight-light" >Total</div>
-                            <?php
 
-                            for ($i=1; $i<=$select['id']; $i++){
-                                $soma= $select['valor'] + $soma;    
-                            ?>
-                            
-                            <div class="h3 font-weight-light"><?php echo $soma?></div>
-                            <?php }?>
+                            <div class="h3 font-weight-light"><?php echo "R$ ". $somartotal?></div>                            
                         </div>
                     </div>
                 </div>

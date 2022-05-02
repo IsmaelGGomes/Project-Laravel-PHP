@@ -28,5 +28,5 @@ Route::get('/rolagem', function(){
 });
 Route::get('/registro', function(){
 
-    return view('registro');
+    return view('login');
 });

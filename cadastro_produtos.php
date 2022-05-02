@@ -26,14 +26,14 @@
                 </div>
                 <div class="form-group col-lg-6">
                     <label>Quantidade</label>
-                    <input type="" name="valor" class="form-control" id="" value="" placeholder="Insira a quantidade">
+                    <input type="" name="qtd" class="form-control" id="" value="" placeholder="Insira a quantidade">
                 </div>
                 <?php
 
 
                 include("Conexao.php");
 
-                //Incrementação de dados
+                //Incremento de dados
                 if ($_POST) {
 
                     $nome_produto = ($_POST['nome_produto']);

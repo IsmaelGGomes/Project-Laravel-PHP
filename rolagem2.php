@@ -57,7 +57,7 @@
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
                     </ol>
                     <!-- Wrapper for carousel items -->
                     <?php
@@ -68,69 +68,75 @@
                     //$id_pesquisa_name = $pesquisar = filter_input(INPUT_GET, 'name');
 
                     // Selecionar na tabela 
-                    $resultado_pesquisa = "SELECT * FROM acesso_novo WHERE setor";
+                    $resultado_pesquisa = "SELECT * FROM acesso_novo";
                     $resultado_query = mysqli_query($mysqli, $resultado_pesquisa);
                     ?>
 
-                    <div class="carousel-inner">
-                        <div class="row">
+
+                    <?php
+                    //if ($resultado_query->num_rows == 1) {
+
+                    while ($proc2 = mysqli_fetch_assoc($resultado_query)) { ?>
+                        <div class="carousel-inner">
                             <div class="item carousel-item active">
-                                <?php
-                                if ($resultado_query->num_rows == 1) {
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="thumb-wrapper">
+                                            <div class="img-box">
+                                                <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4><?php echo $proc2['id'] ?></h4>
+                                                <p class="item-price"><b>Nome: </b><span><?php echo $proc2['nome'] . "<br/>"; ?></span></p>
+                                                <p><b>Email: </b><?php echo $proc2['email'] ?></p>
+                                                <p class=""><b>Senha: </b><?php echo $proc2['senha'] ?></p>
+                                                <p class=""><b>Setor: </b><?php echo $proc2['setor'] ?></p>
 
-                                    while ($proc2 = mysqli_fetch_assoc($resultado_query)) { ?>
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <div class="img-box">
-                                                    <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4><?php echo $proc2['id'] ?></h4>
-                                                    <p class="item-price"><b>Nome: </b><span><?php echo $proc2['nome'] . "<br/>"; ?></span></p>
-                                                    <p><b>Email: </b><?php echo $proc2['email'] ?></p>
-                                                    <p class=""><b>Senha: </b><?php echo $proc2['senha'] ?></p>
-
-                                                    <a href="#" class="btn btn-primary">Adicionar</a>
-                                                </div>
+                                                <a href="#" class="btn btn-primary">Adicionar</a>
                                             </div>
                                         </div>
-                                    <?php }
-                                } else { ?>
-
-                                    <?php while ($proc1 = mysqli_fetch_assoc($resultado_query1)) { ?>
-
-
-                                        <div class="col-sm-3">
-                                            <div class="thumb-wrapper">
-                                                <div class="img-box">
-                                                    <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h4><?php echo $proc1['id'] ?></h4>
-                                                    <p class="item-price"><b>Nome: </b><span><?php echo $proc1['nome'] . "<br/>"; ?></span></p>
-                                                    <p><b>Email: </b><?php echo $proc1['email'] ?></p>
-                                                    <p class=""><b>Senha: </b><?php echo $proc1['senha'] ?></p>
-                                                    <p class=""><b>Setor: </b><?php echo $proc1['setor'] ?></p>
-
-                                                    <a href="#" class="btn btn-primary">Adicionar</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                <?php }
-                                } ?>
-
-                                <!-- Carousel controls -->
-                                <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                                </a>
-                                <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
-                    </div>
+                    <?php }
+                    //} else { 
+                    ?>
+
+                    <?php /* while ($proc1 = mysqli_fetch_assoc($resultado_query1)) { ?>
+
+
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4><?php echo $proc1['id'] ?></h4>
+                                        <p class="item-price"><b>Nome: </b><span><?php echo $proc1['nome'] . "<br/>"; ?></span></p>
+                                        <p><b>Email: </b><?php echo $proc1['email'] ?></p>
+                                        <p class=""><b>Senha: </b><?php echo $proc1['senha'] ?></p>
+                                        <p class=""><b>Setor: </b><?php echo $proc1['setor'] ?></p>
+
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php }
+                    } */ ?>
+
+                    <!-- Carousel controls -->
+                    <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
 </body>
 
 </html>
