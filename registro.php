@@ -67,59 +67,60 @@ if ($_POST) {
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style1.css">
-    
+
 
 
 </head>
 
 <body>
-    
-                <h1>Cadastro de Usuario</h1>
-                <form action="" method="POST">
 
-                    <div class="form-group">
-                        <hr>
-                        <label for="" class="cols-sm-2 control-label">Nome</label>
-                        <div class="cols-sm-10">
-                            <div class="input-group">
-                                <span class="input-group-addon"> <i class="fa fa-user fa" aria-hidden="true"> </i> </span>
-                                <input type="text" name="nome" placeholder="Insira seu nome" />
-                            </div>
-                        </div>
-                    </div>
+    <h1>Cadastro de Usuario</h1>
+    <form action="" method="POST">
 
-                    <label for="" classe="cols-sm-2 control-label" name="registro_email"> Email</label>
-                    <div class="cols-sm10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="email" name="email" placeholder="Insira seu email" />
-                        </div>
-                    </div>
+        <div class="form-group">
+            <hr>
+            <label for="" class="cols-sm-2 control-label">Nome</label>
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"> <i class="fa fa-user fa" aria-hidden="true"> </i> </span>
+                    <input type="text" name="nome" placeholder="Insira seu nome" />
+                </div>
+            </div>
+        </div>
 
-                    <br>
-                    <label for="" class="cols-sm-2 control-label"> Senha</label>
-                    <div class="cols-sm10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
-                            <input type="password" name="senha" placeholder="Insira sua senha" />
-                        </div>
-                    </div>
-                    <br>
-                    <div id="caixa_suspensa" class="form-group contrl">
-                        <label><b>Setor</b></label>
-                        <select class="form-control" id="registro_input" name="setor">
-                            <option>Biblioteca</option>
-                            <option>Estacionamento</option>
-                            <option>TI</option>
-                            <option>Master</option>
-                        </select>
-                    </div>
-                    <br>
-                    <br>
-                    <button class="col-md-1,5 btn btn-success"> Cadastrar </button>
-                    <br>
-                </form>
-                <a href="login.php?i=back"> <br> <button> Voltar</button> </a>
+        <label for="" classe="cols-sm-2 control-label" name="registro_email"> Email</label>
+        <div class="cols-sm10">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <input type="email" name="email" placeholder="Insira seu email" />
+            </div>
+        </div>
+
+        <br>
+        <label for="" class="cols-sm-2 control-label"> Senha</label>
+        <div class="cols-sm10">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+                <input type="password" name="senha" placeholder="Insira sua senha" />
+            </div>
+        </div>
+        
+        <br>
+        <div id="caixa_suspensa" class="form-group contrl">
+            <label><b>Setor</b></label>
+            <select class="form-control" id="registro_input" name="setor">
+                <option>Biblioteca</option>
+                <option>Estacionamento</option>
+                <option>TI</option>
+                <option>Master</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <button class="col-md-1,5 btn btn-success"> Cadastrar </button>
+        <br>
+    </form>
+    <a href="login.php?i=back"> <br> <button> Voltar</button> </a>
 </body>
 
 </html>

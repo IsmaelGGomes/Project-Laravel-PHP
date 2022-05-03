@@ -7,7 +7,7 @@
     background: grey;
     margin-top: 120px;
     margin-bottom: 120px;
-}
+    }
 </style>
 
 <div class="container">
@@ -17,25 +17,28 @@
                 <div class="card-body p-0">
                     <div class="row p-5">
                         <div class="col-md-6">
-                        <img src="https://i.ibb.co/qDDxwXQ/user-main.jpg" class="img-responsive img-fluid" alt="user-main">
+                        <img src="https://i.ibb.co/6WRG2vR/icon.png" class="img-responsive img-fluid" alt="user-main">
                         </div>
 
                         <div class="col-md-6 text-right">
+                        <button type="button" class="btn btn-secondary btn-lg" onclick="window.print()">Imprimir</button>
+                        <br>
+                        <br>
                             <!--adicionar um campo no qual fique uma sequencia de numeros para identificar 
                                 o numero da impressão-->
-                            <p class="font-weight-bold mb-1">Invoice #550</p> 
+                            <p class="font-weight-bold mb-1">Número de controle: <font color="#FF0000"><?php echo rand(1,1000); ?></font></p> 
                             <?php $hoje= date('d/m/Y')?>
                             <p class="text-muted"><?php echo $hoje?></p>
                         </div>
                     </div>
 
-                    <hr class="my-5">
+                    <hr class="my-6">
 
                     <?php session_start();
                     include("conexao.php");?>
                     
 
-                    <div class="row pb-5 p-5">
+                    <div class="row pb-1 p-2">
                         <div class="col-md-6">
                             <p class="font-weight-bold mb-4">Informações do Cadastro</p>
                             <p class="mb-1"><b>ID: </b><?php echo $_SESSION['id'];?></p>

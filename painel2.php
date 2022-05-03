@@ -11,7 +11,7 @@ if (isset($_GET['acao'])) {
         $sql_delete = "DELETE FROM acesso_novo WHERE id= $id";
 
         if ($mysqli->query($sql_delete) === TRUE) {
-            echo "ok";
+            echo "";
         } else {
             echo "Erro ao deletar !" . $mysqli->error;
         }
@@ -112,7 +112,8 @@ if (isset($_GET['acao'])) {
 
                                 </div>
                                 <div class="col col-xs-6 text-right">
-
+                                    
+                                    <a href="cadastro_produtos.php"> <button type="button" class="btn btn-success">Adicionar Produto</button> </a>
                                     <a href="registro.php?=cadastro"> <button type="button" class="btn btn-sm btn-primary btn-create">Novo Cadastro</button></a>
                                     <a href="rolagem2.php?=registro"> <button type="button" class="btn btn-sm btn-primary btn-create">Lista de Registros</button> </a>
 
@@ -148,14 +149,18 @@ if (isset($_GET['acao'])) {
 
                                         $resultado_pesquisa = "SELECT * FROM acesso_novo WHERE id=$pesquisar";
                                         $resultado_query = mysqli_query($mysqli, $resultado_pesquisa);
+                                        ?>
 
 
+                                        <?php
                                         if ($resultado_query->num_rows == 1) {
 
                                             while ($proc1 = mysqli_fetch_assoc($resultado_query)) {
                                         ?>
+                                    </tr>
+
                                     <tr>
-                                        <a href="cadastro_produtos.php"> <button type="button" class="btn btn-primary">Adicionar Produto</button> </a>
+
                                         <td align="center">
 
                                             <a class="btn btn-default" href="pag_editar.php?=cadastro"><em class="fa fa-pencil"></em></a>
@@ -169,7 +174,6 @@ if (isset($_GET['acao'])) {
                                         <td><?php echo $proc1['email'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['senha'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['setor'] . "<br/>"; ?></td>
-
 
                                     </tr>
                             <?php
@@ -194,6 +198,7 @@ if (isset($_GET['acao'])) {
                                     $resultado_pesquisa1 = "SELECT * FROM acesso_novo";
 
                                     $resultado_query1 = mysqli_query($mysqli, $resultado_pesquisa1);
+
                                     while ($proc1 = mysqli_fetch_assoc($resultado_query1)) {
                                     ?>
                                         <tr>
@@ -208,6 +213,7 @@ if (isset($_GET['acao'])) {
                                         </tr>
                                     <?php } ?>
                                     </tr>
+
                                 </tbody>
                             </table>
 
@@ -225,8 +231,7 @@ if (isset($_GET['acao'])) {
                                         <li><a href="#">5</a></li>
                                     </ul>
                                     <ul>
-                                        <?php echo "Deseja sair ?" ?>
-                                        <li><a href=login.php>SAIR</a> </li>
+                                        <button><a href=login.php>SAIR</a> </button>
                                     </ul>
                                     <ul class="pagination visible-xs pull-right">
                                         <li><a href="#">«</a></li>
