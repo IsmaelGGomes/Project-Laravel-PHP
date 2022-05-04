@@ -168,7 +168,7 @@ if (isset($_GET['acao'])) {
                                             <a class="btn btn-danger" href="painel2.php?acao=deletar&id=<?php echo $proc1['id'] ?>"><em class="fa fa-trash"></em></a>
 
                                         </td>
-
+                                                <?php $_SESSION['id_teste']=$proc1['id']?>
                                         <td><?php echo $proc1['id'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['nome'] . "<br/>"; ?></td>
                                         <td><?php echo $proc1['email'] . "<br/>"; ?></td>

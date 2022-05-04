@@ -30,7 +30,7 @@ if ($_POST) {
     if (!empty($_POST['email']) and (!empty($_POST['nome'])) and (!empty($_POST['senha'])) and (!empty($_POST['setor']))) {
 
 
-        $sql = "UPDATE `acesso_novo` SET nome = '$nome1' , email = '$email1', senha= '$senha1', setor= '$setor1' WHERE `id` =" . $_SESSION['id'];
+        $sql = "UPDATE `acesso_novo` SET nome = '$nome1' , email = '$email1', senha= '$senha1', setor= '$setor1' WHERE `id` =" . $_SESSION['id_teste'];
 
         if (mysqli_query($mysqli, $sql)) {
             echo "<h4> Usuario Editado com sucesso !</h4>";
