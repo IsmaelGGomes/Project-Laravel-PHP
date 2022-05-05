@@ -37,9 +37,10 @@
                             <li><a href="/login_registro/Dash/index.php?x=asdas"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                             <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li>
                             <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
-                            <li><a href="/login_registro/rolagem2.php?x=dashboard"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Lista Registros</span></a></li>
+                            <li><a href="/login_registro/rolagem2.php?x=dashboard"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Carrosel Registro</span></a></li>
                             <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Usuários</span></a></li>
                             <li><a href="#"><i class="fa fa-cog" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Area ADM</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Area de Compras</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -66,33 +67,15 @@
                             <div class="col-md-5">
                                 <div class="header-rightside">
                                     <ul class="list-inline header-top pull-right">
-                                        <li class="hidden-xs"><a href="#" class="add-project" data-toggle="modal" data-target="#add_project">Add Project</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                        <li class="hidden-xs"><a href="/login_registro/Dash/registro_usuario_index.php" class="add-project" data-toggle="modal" data-target="#add_project">Cadastrar</a></li>
+                                        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                                         <li>
                                             <a href="#" class="icon-info">
                                                 <i class="fa fa-bell" aria-hidden="true"></i>
-                                                <span class="label label-primary">3</span>
+                                                <span class="label label-primary"></span>
                                             </a>
                                         </li>
-                                        <li class="dropdown">
-                                            <!-- AREA COM DROPDDOWN COM IMAGEM PRA SELECIONAR ALGO-->
 
-                                            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="user">
-                                                <b class="caret"></b></a> -->
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <div class="navbar-content">
-                                                        <span>JS Krishna</span>
-                                                        <p class="text-muted small">
-                                                            me@jskrishna.com
-                                                        </p>
-                                                        <div class="divider">
-                                                        </div>
-                                                        <a href="#" class="view btn-sm active">View Profile</a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -115,7 +98,7 @@
                                             <p>
                                             <form action="" method="GET">
 
-                                                <input type="text" name="name" placeholder=" Insira o ID" size="54" >
+                                                <input type="text" name="name" placeholder=" Insira o ID" size="54">
                                                 <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                                             </form>
                                             </p>
@@ -139,15 +122,12 @@
                                         <tbody>
                                             <tr>
                                                 <?php
-                                                include('Conexao.php');
+                                                include("Conexao.php");
+                                                //AREA PARA FILTRAR
                                                 $id_pesquisa = $pesquisar = filter_input(INPUT_GET, 'id');
 
                                                 $id_pesquisa_name = $pesquisar = filter_input(INPUT_GET, 'name');
-                                                //$resultado_pesquisa = "SELECT * FROM acesso_novo WHERE id= $id_pesquisa_name";
 
-                                                //$resultado_query = mysqli_query($mysqli, $resultado_pesquisa);
-
-                                                //$_SESSION['id'] = $pesquisar;
 
                                                 $resultado_pesquisa = "SELECT * FROM acesso_novo WHERE id=$pesquisar";
                                                 $resultado_query = mysqli_query($mysqli, $resultado_pesquisa);
@@ -166,27 +146,27 @@
 
                                                     <a class="btn btn-default" href="/login_registro/Dash/editar_usuario_index.php"><em class="fa fa-pencil"></em></a>
 
-                                                    <a class="btn btn-danger" href="painel2.php?acao=deletar&id=<?php echo $proc1['id'] ?>"><em class="fa fa-trash"></em></a>
+                                                    <a class="btn btn-danger" href="/login_registro/Dash/usuarios_index.php?acao=deletar&id=<?php echo $proc1['id'] ?>"><em class="fa fa-trash"></em></a>
 
                                                 </td>
-                                                <?php $_SESSION['id_select']= $proc1['id']?> 
+                                                <?php $_SESSION['id_select'] = $proc1['id'] ?>
 
                                                 <td><?php echo $proc1['id'] . "<br/>"; ?></td>
                                                 <td><?php echo $proc1['nome'] . "<br/>"; ?></td>
                                                 <td><?php echo $proc1['email'] . "<br/>"; ?></td>
                                                 <td><?php echo $proc1['senha'] . "<br/>"; ?></td>
                                                 <td><?php echo $proc1['setor'] . "<br/>"; ?></td>
-
+                                                                
                                             </tr>
-                                    <?php
+                                        <?php
                                                     }
-                                                } else {?>
-                                                    <div class="alert alert-danger" role="alert">
-                                                        ID NÃO ENCONTRADO
-                                                    </div>
-                                                <?php } ?>
+                                                } else { ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            ID NÃO ENCONTRADO
+                                        </div>
+                                    <?php } ?>
 
-                                     <div class="panel-body">
+                                    <div class="panel-body">
                                         <table class="table table-striped table-bordered table-list">
                                             <thead>
                                                 <tr>
@@ -215,7 +195,26 @@
                                                 <td><?php echo $proc1['setor'] . "<br/>"; ?></td>
 
                                                 </tr>
-                                            <?php } ?>
+                                            <?php }
+                                            //DELETAR REGISTROS SALVOS
+                                            include('conexao.php');
+
+                                            if (isset($_GET['acao'])) {
+
+                                                if ($_GET['acao'] == "deletar") {
+                                                    $id = $_GET['id'];
+
+                                                    $sql_delete = "DELETE FROM acesso_novo WHERE id= $id";
+
+                                                    if ($mysqli->query($sql_delete) === TRUE) {
+                                                        echo "";
+                                                    } else {
+                                                        echo "Erro ao deletar !" . $mysqli->error;
+                                                    }
+                                                }
+                                            }
+
+                                            ?>
                                             </tr>
 
                                         </tbody>

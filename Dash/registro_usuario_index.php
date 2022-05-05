@@ -66,7 +66,7 @@
                             <div class="col-md-5">
                                 <div class="header-rightside">
                                     <ul class="list-inline header-top pull-right">
-                                        <li class="hidden-xs"><a href="/login_registro/Dash/registro_usuario_index.php" class="add-project" data-toggle="modal" data-target="#add_project">Cadastrar</a></li>
+                                        <li class="hidden-xs"><a href="#" class="add-project" data-toggle="modal" data-target="#add_project">Registrar</a></li>
                                         <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                                         <li>
                                             <a href="#" class="icon-info">
@@ -74,7 +74,7 @@
                                                 <span class="label label-primary"></span>
                                             </a>
                                         </li>
-                                        
+
                                     </ul>
                                 </div>
                             </div>
@@ -84,10 +84,9 @@
                     if ($_POST) {
 
                         include("conexao.php");
-
-
-                        if (isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['nome']) || isset($_POST['setor'])) {
-
+                    
+                        if (isset($_POST['email']) || isset($_POST['senha'])) {
+                    
                             if (strlen($_POST['email']) == 0) {
                                 echo "<h4> Preencha seu e-mail </h4>";
                             } else 
@@ -97,24 +96,24 @@
                                 if (strlen($_POST['nome']) == 0) {
                                 echo "<h4> Preencha seu nome </h4>";
                             } else
-                                if (strlen($_POST['setor']) == 0) {
-                                echo ("<h4> Insira seu setor </h4>");
+                            if (strlen($_POST['setor']) == 0) {
+                                echo "<h4> insira o setor </h4>";
                             }
                         }
-
-                        //$voltar_pagina = ($_GET['x']);
+                    
+                        //$pagina = ($_GET['x']);
                         $nome1 = ($_POST['nome']);
                         $email1 = ($_POST['email']);
                         $senha1 = ($_POST['senha']);
                         $setor1 = ($_POST['setor']);
                         //$cadastro = ($_GET['cadastro']);
                         if (!empty($_POST['email']) and (!empty($_POST['nome'])) and (!empty($_POST['senha'])) and (!empty($_POST['setor']))) {
-
-
-                            $sql = "UPDATE `acesso_novo` SET nome = '$nome1' , email = '$email1', senha= '$senha1', setor= '$setor1' WHERE `id` =" . $_SESSION['id_select'];
-
+                    
+                            $sql = "INSERT INTO acesso_novo(nome, email, senha, setor) 
+                                VALUES ('$nome1', '$email1', '$senha1', '$setor1')";
+                    
                             if (mysqli_query($mysqli, $sql)) {
-                                echo "<h4> Usuario Editado com sucesso !</h4>";
+                                echo "<h4> Usuario cadastrado com sucesso !</h4>";
                             } else {
                                 echo "Erro !" . mysqli_connect_error($mysqli);
                             }
@@ -130,7 +129,7 @@
                             <div class="col-md-5 col-sm-5 col-xs-12 gutter">
 
                                 <div class="sales">
-                                    <h2>Editar cadastro</h2>
+                                    <h2>Cadastro de Usuário</h2>
                                 </div>
 
                             </div>
@@ -157,45 +156,48 @@
                                         <br>
                                         <br>
                                         <br>
-                                        <h4><b>ID selecionado: </b><?php echo $_SESSION['id_select']; ?></h4>
-                                        <br>
-                                        <label for="" class="cols-sm-2 control-label">Nome</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"> <i class="fa fa-user fa" aria-hidden="true"> </i> </span>
-                                                <input type="text" name="nome" placeholder="Insira seu nome" />
+                                        <div class="form-group">
+                                           
+                                            <label for="" class="cols-sm-2 control-label">Nome</label>
+                                            <div class="cols-sm-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"> <i class="fa fa-user fa" aria-hidden="true"> </i> </span>
+                                                    <input type="text" name="nome" placeholder="Insira seu nome" />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <label for="" classe="cols-sm-2 control-label"> Email</label>
-                                    <div class="cols-sm10">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                            <input type="text" name="email" placeholder="Insira seu email" />
+                                        <label for="" classe="cols-sm-2 control-label" name="registro_email"> Email</label>
+                                        <div class="cols-sm10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                                <input type="email" name="email" placeholder="Insira seu email" />
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <br>
-                                    <label for="" class="cols-sm-2 control-label"> Senha</label>
-                                    <div class="cols-sm10">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
-                                            <input type="password" name="senha" placeholder="Insira sua senha" />
+                                        <br>
+                                        <label for="" class="cols-sm-2 control-label"> Senha</label>
+                                        <div class="cols-sm10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+                                                <input type="password" name="senha" placeholder="Insira sua senha" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label><b>Setor</b></label>
-                                        <select class="form-control" id="editar_input" name="setor">
-                                            <option>Biblioteca</option>
-                                            <option>Estacionamento</option>
-                                            <option>TI</option>
-                                            <option>Master</option>
-                                        </select>
-                                    </div>
-                                    <button class="col-md-1,5 btn btn-success"> Editar Cadastro </button>
-                                    <br>
+
+                                        <br>
+                                        <div class="form-group">
+                                            <label><b>Setor</b></label>
+                                            <select class="form-control" id="editar_input" name="setor">
+                                                <option>Biblioteca</option>
+                                                <option>Estacionamento</option>
+                                                <option>TI</option>
+                                                <option>Master</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <button class="col-md-1,5 btn btn-success">Cadastrar</button>
+                                        <br>
                                 </form>
                                 <br>
                                 <a href="/login_registro/Dash/usuarios_index.php"><button type="button" class="btn btn-info">Voltar</button></a>

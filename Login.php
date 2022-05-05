@@ -43,7 +43,7 @@ if ($_POST) {
                 $_SESSION['id'] = $usuario['id'];
                 $_SESSION['setor'] = $usuario['setor'];
 
-                header("Location: painel2.php");
+                header("Location: /login_registro/Dash/index.php");
             } else {
                 echo "Falha ao logar ! E-mail ou senha ou setor incorretas !";
             }

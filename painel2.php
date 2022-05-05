@@ -46,7 +46,6 @@ if (isset($_GET['acao'])) {
             <br>
             <form action="" method="POST" name="form1">
                 <p>
-
                     <b>
                         <h4> Confirmar informações<br></h4>
                     </b>
