@@ -27,8 +27,10 @@ Route::get('/index', function(){
     return view('index');
 });
 Route::get('/registro2', function(){
-    dd($events);
+    //dd($events);
     return view('index');
 });
 
 Route::get('/registro',[EventController::class,'index']);
+
+Route::get('/login',[LoginController::class,'baseLogin']);

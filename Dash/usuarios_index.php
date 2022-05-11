@@ -35,12 +35,13 @@
                     <div class="navi">
                         <ul>
                             <li><a href="/login_registro/Dash/index.php?x=asdas"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                            <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li>
-                            <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
+                            <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Fluxo de Trabalho</span></a></li>
+                            <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Estatisticas</span></a></li>
                             <li><a href="/login_registro/rolagem2.php?x=dashboard"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Carrosel Registro</span></a></li>
                             <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Usuários</span></a></li>
                             <li><a href="#"><i class="fa fa-cog" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Area ADM</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Area de Compras</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Area de Compras</span></a></li>                            
+                            <li><a href="/login_registro/Dash/contato.php"><i class="fa fa-sort" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Contate-nos</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -68,7 +69,7 @@
                                 <div class="header-rightside">
                                     <ul class="list-inline header-top pull-right">
                                         <li class="hidden-xs"><a href="/login_registro/Dash/registro_usuario_index.php" class="add-project" data-toggle="modal" data-target="#add_project">Cadastrar</a></li>
-                                        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                                        <li><a href="/login_registro/login.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                                         <li>
                                             <a href="#" class="icon-info">
                                                 <i class="fa fa-bell" aria-hidden="true"></i>
@@ -124,6 +125,8 @@
                                                 <?php
                                                 include("Conexao.php");
                                                 //AREA PARA FILTRAR
+                                                if (!isset($resultado_query)){
+
                                                 $id_pesquisa = $pesquisar = filter_input(INPUT_GET, 'id');
 
                                                 $id_pesquisa_name = $pesquisar = filter_input(INPUT_GET, 'name');
@@ -131,6 +134,7 @@
 
                                                 $resultado_pesquisa = "SELECT * FROM acesso_novo WHERE id=$pesquisar";
                                                 $resultado_query = mysqli_query($mysqli, $resultado_pesquisa);
+                                            }
                                                 ?>
 
                                                 <?php
@@ -229,8 +233,6 @@
             </div>
 
         </div>
-
-
 
         <!-- Modal -->
         <div id="add_project" class="modal fade" role="dialog">

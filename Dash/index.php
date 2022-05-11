@@ -39,14 +39,15 @@
                             <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Estatistica</span></a></li>
                             <li><a href="/login_registro/rolagem2.php?x=dashboard"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Lista Registros</span></a></li>
                             <li><a href="/login_registro/Dash/usuarios_index.php?x=user"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Usuários</span></a></li>
-                            <li><a href="#"><i class="fa fa-cog" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Area ADM</span></a></li>
+                            <li><a href="#"><i class="fa fa-cog" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Area ADM</span></a></li>                            
                             <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Area de Compras</span></a></li>
-                            <li><a href="#"><i class="fa fa-sort" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">?</span></a></li>
+                            <li><a href="/login_registro/Dash/contato.php"><i class="fa fa-sort" aria-hidden="true" type="submit"></i><span class="hidden-xs hidden-sm">Contate-nos</span></a></li>
 
                         </ul>
 
                     </div>
                 </div>
+
                 <div class="col-md-10 col-sm-11 display-table-cell v-align">
                     <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
                     <div class="row">
@@ -90,47 +91,21 @@
                         <h1>Olá, <?php echo $_SESSION['nome'] ?></h1>
                         <div class="row">
 
-                            <div class="col-md-5 col-sm-5 col-xs-12 gutter">
+                            <!-- AREA PARA INSERIR ALGO DO LADO DE REPORT-->
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12 gutter">
 
-                                <div class="sales">
-                                    <h2>sda</h2>
-                                    <br>
-                                    
-                                    <select class="form-control">
-                                        <option>asda</option>
-                                        <option>Estacionamento</option>
-                                        <option>TI</option>
-                                        <option>Master</option>
-                                    </select>
-
-                                    <!--  <div class="btn-group">
-                                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span>Confirmar Informações de Cadastro</span> 
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a href="#">2012</a>
-                                            <a href="#">2014</a>
-                                            <a href="#">2015</a>
-                                            <a href="#">2016</a>
-                                        </div>
-                                    </div> -->
-                                </div>
-
-                            </div>
-                            <div class="col-md-7 col-sm-7 col-xs-12 gutter">
-
-                                <div class="sales report">
-                                    <h2>Report</h2>
-                                    <div class="btn-group">
-                                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span>Period:</span> Last Year
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a href="#">2012</a>
-                                            <a href="#">2014</a>
-                                            <a href="#">2015</a>
-                                            <a href="#">2016</a>
-                                        </div>
+                            <div class="sales report">
+                                <h2>Report</h2>
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span>Period:</span> Last Year
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a href="#">2012</a>
+                                        <a href="#">2014</a>
+                                        <a href="#">2015</a>
+                                        <a href="#">2016</a>
                                     </div>
                                 </div>
                             </div>
@@ -138,6 +113,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
         </div>
 

@@ -12,18 +12,21 @@
     <table border="2">
         <thead>
             <th>ID</th>
-            <th>Titulo</th>
-            <th>Descrição</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Setor</th>
         </thead>
         <tbody>
-            @foreach ( $events as $event )
+            @foreach ($dados as $dado)
             <tr>
-                <td>{{ $event->id }}<br></td>
-                <td>{{ $event->title }} <br></td>
-                <td>{{ $event->description }}<br></td>
+                <td>{{ $dado->id }}<br></td>
+                <td>{{ $dado->nome }} <br></td>
+                <td>{{ $dado->email }}<br></td>
+                <td>{{ $dado->senha }}<br></td>
+                <td>{{ $dado->setor }}<br></td>
             </tr>
             @endforeach
-            
         </tbody>
     </table>
 </body>
