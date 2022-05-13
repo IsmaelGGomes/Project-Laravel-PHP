@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,4 +38,8 @@ Route::post('/events', [EventController::class,'store']);
 
 Route::get('/events/create',[EventController::class,'create']);
 
-Route::get('/login',[LoginController::class,'baseLogin']);
+//EVENTO DE REGISTRO--------------------------------------------
+
+Route::post('/events/registro', [LoginController::class,'store1']);
+
+Route::get('/events/registro',[LoginController::class,'registro']);
