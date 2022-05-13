@@ -33,4 +33,8 @@ Route::get('/registro2', function(){
 
 Route::get('/registro',[EventController::class,'index']);
 
+Route::post('/events', [EventController::class,'store']);
+
+Route::get('/events/create',[EventController::class,'create']);
+
 Route::get('/login',[LoginController::class,'baseLogin']);

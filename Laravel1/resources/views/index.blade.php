@@ -1,38 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <table border="2">
-        <thead>
-            <th>ID</th>
-            <th>Titulo</th>
-            <th>Descrição</th>
-        </thead>
-        <tbody>
-            @foreach ( $events as $event )
-            <tr>
-                <td>{{ $event->id }}<br></td>
-                <td>{{ $event->title }} <br></td>
-                <td>{{ $event->description }}<br></td>
-            </tr>
-            @endforeach
-            
-        </tbody>
-    </table>
-</body>
-
-</html>
 <!-- <div>
     <h1>Listagem:</h1>
 
     @foreach ( $events as $event )
-    <p>Nome: {{ $event->name }} -- {{ $event->description}}</p>
+    <p>Nome: {{ $event->title }} -- {{ $event->city}}</p>
     @endforeach
-</div> -->
+</div>
+ -->
+@extends('layouts.main')
+
+@section('title')
+
+@section('content')
+
+<div id="serach-container" class="col-md-12">
+    <h1> BUSQUE UM EVENTO </h1>
+    
+    <form action="">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Procure algo">
+    </form>
+    <a href="/events/create"><button class="btn btn-primary"> Cadastro de evento</button></a>
+</div>
+<div class="events-container" class="col-md-12">
+    <h2> Proximos eventos</h2>
+    <p> Veja os eventos dos próximos dias</p>
+    <div id="cards-container" class="row">
+        @foreach($events as $event)
+        <div class="card col-md-3">
+            <img src="/img/logo-de-iso.png" alt="{{ $event->title }}">
+            <div class="card-body">
+                <p class="card-date">10/09/2020</p>
+                <h5 class="card-title">{{ $event->title }}</h5>
+                <p class="card-participants">X Participantes</p>
+                <a href="#" class="btn btn-primary" id="botao">Saber mais</a>                
+            </div>
+        </div>
+        @endforeach
+    </div>
+
+</div>
+
+@endsection

@@ -1,0 +1,52 @@
+*{
+    font-family: 'Roboto';
+}
+
+body{
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+header{
+    background-color: white;
+    border-color: 1px solid #CCC;
+
+}
+
+.row {
+    margin: 0;
+}
+
+.container-fluid{
+    margin: 0;
+}
+
+#botao{
+    background-color: #F2A340;
+    border: 2px solid #C28008;
+}
+
+#botao:hover {
+    background-color: #C28008;
+    border-color: #C28008;
+}
+
+/* Event creat page*/
+
+#event-creat-container{
+
+    padding: 30px;
+}
+
+#event-creat-container label{
+
+font-weight: bold;
+
+}
+
+/* #event-creat-container input,
+#event-creat-container select,
+#event-creat-container input,
+ */
+
