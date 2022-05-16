@@ -84,9 +84,9 @@
                     if ($_POST) {
 
                         include("conexao.php");
-                    
+
                         if (isset($_POST['email']) || isset($_POST['senha'])) {
-                    
+
                             if (strlen($_POST['email']) == 0) {
                                 echo "<h4> Preencha seu e-mail </h4>";
                             } else 
@@ -100,7 +100,7 @@
                                 echo "<h4> insira o setor </h4>";
                             }
                         }
-                    
+
                         //$pagina = ($_GET['x']);
                         $nome1 = ($_POST['nome']);
                         $email1 = ($_POST['email']);
@@ -108,16 +108,16 @@
                         $setor1 = ($_POST['setor']);
                         //$cadastro = ($_GET['cadastro']);
                         if (!empty($_POST['email']) and (!empty($_POST['nome'])) and (!empty($_POST['senha'])) and (!empty($_POST['setor']))) {
-                    
+
                             $sql = "INSERT INTO acesso_novo(nome, email, senha, setor) 
                                 VALUES ('$nome1', '$email1', '$senha1', '$setor1')";
-                    
-                             if (mysqli_query($mysqli, $sql)) {
+
+                            if (mysqli_query($mysqli, $sql)) {
                                 echo "<h4> Usuario cadastrado com sucesso !</h4>";
                             } else {
                                 echo "Erro !" . mysqli_connect_error($mysqli);
                             }
-                            mysqli_close($mysqli); 
+                            mysqli_close($mysqli);
                         }
                     }
 
@@ -126,7 +126,7 @@
 
                         <div class="row">
 
-                            <div class="col-md-5 col-sm-5 col-xs-12 gutter">
+                            <div class="col-md-4 col-sm-5 col-xs-12 gutter">
 
                                 <div class="sales">
                                     <h2>Cadastro de Usuário</h2>
@@ -149,6 +149,12 @@
                                     #editar_input {
                                         width: 22%;
                                     }
+
+                                    .gutter {
+                                        float: left;
+                                        height: 20px;
+                                        position: relative;
+                                    }
                                 </style>
                                 <form atcion="" method="POST">
                                     <div class="form-group">
@@ -157,7 +163,7 @@
                                         <br>
                                         <br>
                                         <div class="form-group">
-                                           
+
                                             <label for="" class="cols-sm-2 control-label">Nome</label>
                                             <div class="cols-sm-10">
                                                 <div class="input-group">

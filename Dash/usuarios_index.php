@@ -106,7 +106,7 @@
 
                                     </div>
                                 </div>
-                                <div class="panel-body">
+                                <div class="painel-body">
                                     <table class="table table-striped table-bordered table-list">
                                         <thead>
                                             <tr>

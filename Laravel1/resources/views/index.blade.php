@@ -28,7 +28,7 @@
         <div class="card col-md-3">
             <img src="/img/logo-de-iso.png" alt="{{ $event->title }}">
             <div class="card-body">
-                <p class="card-date">10/09/2020</p>
+                <p class="card-date">{{ $event->created_at }}</p>
                 <h5 class="card-title">{{ $event->title }}</h5>
                 <p class="card-participants">X Participantes</p>
                 <a href="#" class="btn btn-primary" id="botao">Saber mais</a>                

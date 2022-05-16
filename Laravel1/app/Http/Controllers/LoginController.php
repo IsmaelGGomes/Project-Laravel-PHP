@@ -29,4 +29,30 @@ class LoginController extends Controller
         return redirect('/registro');
 
     }
+
+    public function login(){
+        return view('paginas.login');
+
+    }
+
+    /* TELA DE REGISTROS DE USUARIOS*/
+    public function listagem(){
+        return view('paginas.usuarios');
+
+    }
+
+    public function lista(){
+
+        $loggers = Login::all();
+
+        return view('paginas.usuarios',['logins' => $loggers]);
+    }
+    
+    /* TELA DE EDITAR USUARIOS*/
+
+    public function edits(){
+        return view('events.editar');
+
+    }
+
 }

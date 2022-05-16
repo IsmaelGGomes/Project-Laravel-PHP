@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-</head>
-<body>
 <div class="sidenav" id="right">
     <link rel="stylesheet" href="/login_registro/css/LOGIN2.css">
     <div class="login-main-text1">
@@ -85,52 +72,8 @@
         <br>
         <a href="/login_registro/Dash/index.php"><button class="btn btn-primary" type="button"> Voltar</button></a>
     </form>
-    <?php
-    if ($_POST) {
-
-        if (isset($_POST['nome1']) || isset($_POST['estado12']) || isset($_POST['municipio']) || isset($_POST['email1']) || isset($_POST['setor1']) || isset($_POST['descricao'])) {
-
-            if (strlen($_POST['nome1']) == 0) {
-                echo "<h4> Preencha seu nome </h4>";
-            } else 
-                    if (strlen($_POST['estado12']) == 0) {
-                echo "<h4> Selecione o Estado </h4>";
-            } else 
-                    if (strlen($_POST['email1']) == 0) {
-                echo "<h4> Preencha seu email </h4>";
-            } else 
-                    if (strlen($_POST['setor1']) == 0) {
-                echo "<h4> Selecione o setor </h4>";
-            } else 
-                    if (strlen($_POST['descricao']) == 0) {
-                echo "<h4> Descreva o relato </h4>";
-            }
-        }
-
-
-        $nome1 = ($_POST['nome1']);
-        $estado1 = ($_POST['estado12']);
-        //$municipio1 = ($_POST['municipio']);
-        $email1 = ($_POST['email1']);
-        $setor1 = ($_POST['setor1']);
-        $descricao = ($_POST['descricao']);
-
-        if (!empty($_POST['nome1']) and (!empty($_POST['estado12'])) and (!empty($_POST['email1'])) and (!empty($_POST['setor1'])) and (!empty($_POST['descricao']))) {
-
-            $sql = "INSERT INTO acesso_local(nome, email, setor, estado, descricao) VALUES ('$nome1','$email1','$setor1','$estado1','$descricao')";
-
-            if (mysqli_query($mysqli, $sql)) {
-                echo "<h4> Enviado !</h4>";
-            } else {
-                echo "Erro ao conectar banco de dados !" . mysqli_connect_error($mysqli);
-            }
-            mysqli_close($mysqli);
-        }
-    }
-
-    ?>
+    
 </div>
     
-</body>
-</html>
+
 

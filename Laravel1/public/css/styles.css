@@ -45,6 +45,17 @@ font-weight: bold;
 
 }
 
+
+/* FLASH DE MENSAGEM QUANDO CADASTRA UM EVENTO*/
+.msg{
+background-color: #D4EDDA;
+color: #155724;
+border: 1px solid #c3e6cd;
+width: 100%;
+text-align: center;
+padding: 10px;
+}
+
 /* #event-creat-container input,
 #event-creat-container select,
 #event-creat-container input,

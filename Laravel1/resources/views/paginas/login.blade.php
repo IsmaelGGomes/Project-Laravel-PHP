@@ -2,54 +2,6 @@
 
 use Symfony\Component\VarDumper\VarDumper;
 
-if ($_POST) {
-    //testando novo comentario 
-
-    include('conexao.php');
-
-    if (isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['setor'])) {
-
-        if (strlen($_POST['email']) == 0) {
-            echo "Preencha seu e-mail";
-        } else 
-            if (strlen($_POST['senha']) == 0) {
-            echo "Preencha sua senha";
-        } else 
-            if (strlen($_POST['setor']) == 0) {
-            echo "Insira o setor";
-        } else {
-
-            $email = ($_POST['email']);
-            $senha = ($_POST['senha']);
-            $setor = ($_POST['setor']);
-
-            $sql_code = "SELECT * FROM acesso_novo WHERE email = '$email' AND senha = '$senha' AND setor = '$setor'";
-            $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-
-            $quantidade = $sql_query->num_rows;
-
-            //echo $quantidade;
-            //foi adicionado coisas novas para testar o diretorio da coisa
-
-            if ($quantidade == 1) {
-
-                $usuario = $sql_query->fetch_assoc();
-
-                session_start();
-
-                $_SESSION['email'] = $usuario['email'];
-                $_SESSION['senha'] = $usuario['senha'];
-                $_SESSION['nome'] = $usuario['nome'];
-                $_SESSION['id'] = $usuario['id'];
-                $_SESSION['setor'] = $usuario['setor'];
-
-                header("Location: /login_registro/Dash/index.php");
-            } else {
-                echo "Falha ao logar ! E-mail ou senha ou setor incorretas !";
-            }
-        }
-    }
-}
 
 ?>
 
@@ -106,9 +58,8 @@ if ($_POST) {
             </div>
         </div>
     </div>
-    
-</body>
 
 </body>
+
 
 </html>

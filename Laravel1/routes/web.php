@@ -43,3 +43,24 @@ Route::get('/events/create',[EventController::class,'create']);
 Route::post('/events/registro', [LoginController::class,'store1']);
 
 Route::get('/events/registro',[LoginController::class,'registro']);
+
+//TELA DE LOGIN-------------------------------------------------
+
+Route::get('/login',[LoginController::class,'login']);
+
+//TELA LISTA DE LOGIN
+
+Route::get('/listaLogin',[LoginController::class,'lista']);
+
+Route::get('/lista',[EventController::class,'listagem']);
+
+//EVENTO DE EDITAR
+
+Route::get('/editar', [LoginController::class,'edits']);
+
+Route::post('/events/registro',[LoginController::class,'registro']);
+
+
+
+
+
