@@ -22,44 +22,65 @@ use Symfony\Component\VarDumper\VarDumper;
 </head>
 
 <body>
-
-    <div class="sidenav">
-        <div class="login-main-text">
-            <h2>Tela de Login<br></h2>
-        </div>
-    </div>
-    <div class="main" id="left">
-        <link rel="stylesheet" href="css/LOGIN2.css">
-        <div class="col-md-6 col-sm-12">
-            <div class="login-form">
-                <form action="" method="POST">
-
-                    <div class="form-group">
-                        <label><b>E-mail</b></label>
-                        <input type="text" class="form-control" placeholder="Insira o e-mail" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label><b>Senha</b></label>
-                        <input type="password" class="form-control" placeholder="Insira a senha" name="senha">
-                    </div>
-                    <div class="form-group">
-                        <label><b>Setor</b></label>
-                        <select class="form-control" id="select1" name="setor">
-                            <option>Biblioteca</option>
-                            <option>Estacionamento</option>
-                            <option>TI</option>
-                            <option>Master</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-black">Entrar</button>
-
-                </form>
-                <a href="registro.php?x=pagina"><br><button type="submit" class="btn btn-secondary">Registrar</button> </a>
+    <center>
+        <div class="sidenav">
+            <div class="login-main-text">
+                <h2>Login<br></h2>
             </div>
         </div>
-    </div>
+    </center>
+
+    <style type="text/css">
+        .form-group {
+            position: relative;
+            margin: 10px;
+        }
+
+        label {
+            float: left;
+        }
+
+        input {
+            /*   line-height: 30px;
+            margin: 0px auto; */
+            
+        }
+    </style>
+
+    <center>
+        <div class="main" id="left">
+            <link rel="stylesheet" href="css/LOGIN2.css">
+            <div class="col-md-6 col-sm-12">
+                <div class="login-form">
+                    <form action="" method="POST">
+
+                        <div class="form-group">
+                            <label><b>E-mail</b></label>
+                            <input type="text" class="form-control" placeholder="Insira o e-mail" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label><b>Senha</b></label>
+                            <input type="password" class="form-control" placeholder="Insira a senha" name="senha">
+                        </div>
+                        <div class="form-group">
+                            <label><b>Setor</b></label>
+                            <select class="form-control" id="select1" name="setor">
+                                <option>Biblioteca</option>
+                                <option>Estacionamento</option>
+                                <option>TI</option>
+                                <option>Master</option>
+                            </select>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-black">Entrar</button>
+
+                    </form>
+                    <a href="registro.php?x=pagina"><br><button type="submit" class="btn btn-secondary">Registrar</button> </a>
+                </div>
+            </div>
+        </div>
+    </center>
 
 </body>
-
 
 </html>

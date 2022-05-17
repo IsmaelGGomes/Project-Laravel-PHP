@@ -15,7 +15,7 @@ class LoginController extends Controller
     }
     
     public function store1(Request $request){
-        //criar um objeto criadno uma variavel
+        //criar um objeto criando uma variavel
         //Distanciar a classe do model 
         $event = new Login;
 
@@ -55,4 +55,5 @@ class LoginController extends Controller
 
     }
 
+    
 }

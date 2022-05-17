@@ -46,11 +46,11 @@
 
                     //foreach ($select as $dados) { 
                     //echo "<option value='" . $dados['nome'] . "'>" . "</option>"; 
-                    ?>"
+                    ?>
 
                     <?php //if($select == $dados['nome'])
                     //{ echo "selected"; } 
-                    ?>>
+                    ?>
                     <?php //echo $dados['nome']; 
                     ?>
 

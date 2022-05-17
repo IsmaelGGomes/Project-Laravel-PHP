@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProdutoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,13 +35,13 @@ Route::get('/registro2', function(){
 
 Route::get('/registro',[EventController::class,'index']);
 
-Route::post('/events', [EventController::class,'store']);
+Route::post('/events',[EventController::class,'store']);
 
 Route::get('/events/create',[EventController::class,'create']);
 
 //EVENTO DE REGISTRO--------------------------------------------
 
-Route::post('/events/registro', [LoginController::class,'store1']);
+Route::post('/events/registro',[LoginController::class,'store1']);
 
 Route::get('/events/registro',[LoginController::class,'registro']);
 
@@ -59,6 +60,14 @@ Route::get('/lista',[EventController::class,'listagem']);
 Route::get('/editar', [LoginController::class,'edits']);
 
 Route::post('/events/registro',[LoginController::class,'registro']);
+
+//EVENTO DE CADASTRAR PRODUTO
+
+Route::get('/events/cadastroProdutos', [ProdutoController::class,'cadastroProduto']);
+
+Route::post('/events/cadastroProdutos',[ProdutoController::class,'produto']);
+
+
 
 
 

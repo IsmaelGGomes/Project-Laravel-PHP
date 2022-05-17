@@ -76,7 +76,6 @@
                 <br>
                 <a href="/login_registro/Dash/usuarios_index.php"><button type="button" class="btn btn-info">Voltar</button></a>
                 <!-- <a href="painel2.php?i=back"> <br> <button> Voltar </button> </a> -->
-
             </div>
 
         </div>
