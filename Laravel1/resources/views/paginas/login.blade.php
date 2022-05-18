@@ -75,7 +75,7 @@ use Symfony\Component\VarDumper\VarDumper;
                         <button type="submit" class="btn btn-black">Entrar</button>
 
                     </form>
-                    <a href="registro.php?x=pagina"><br><button type="submit" class="btn btn-secondary">Registrar</button> </a>
+                    <a href="registro_usuario"><br><button type="submit" class="btn btn-secondary">Registrar</button> </a>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\LocalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,7 @@ Route::get('/', function () {
 });
 Route::get('/you', function () {
 
-    $nome= "ismael";
+    $nome="ismael";
 
     return view('teste', ['nome' => $nome]);
 });
@@ -35,13 +36,14 @@ Route::get('/registro2', function(){
 
 Route::get('/registro',[EventController::class,'index']);
 
+//-------------------------------------------------------------
 Route::post('/events',[EventController::class,'store']);
 
 Route::get('/events/create',[EventController::class,'create']);
 
 //EVENTO DE REGISTRO--------------------------------------------
 
-Route::post('/events/registro',[LoginController::class,'store1']);
+Route::post('/evento',[LoginController::class,'store1']);
 
 Route::get('/events/registro',[LoginController::class,'registro']);
 
@@ -65,7 +67,22 @@ Route::post('/events/registro',[LoginController::class,'registro']);
 
 Route::get('/events/cadastroProdutos', [ProdutoController::class,'cadastroProduto']);
 
-Route::post('/events/cadastroProdutos',[ProdutoController::class,'produto']);
+Route::post('/cadastro',[ProdutoController::class,'produto']);
+
+//TELA REGISTRO DE USUARIO EXTERNO
+
+Route::post('/usuario_externo',[LoginController::class,'store2']);
+
+Route::get('/registro_usuario',[LoginController::class,'registro1']);
+
+//TELA FORMULÁRIO DE CONTATO
+
+Route::post('/contato',[LocalController::class,'store3']);
+
+Route::get('/contato_index',[LocalController::class,'registro3']);
+
+
+
 
 
 

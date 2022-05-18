@@ -1,6 +1,6 @@
 @extends('layouts.dash_principal')
 
-@section('title')
+@section('title','Usuários')
 
 @section('content')
 
@@ -43,8 +43,6 @@
                         //AREA PARA FILTRAR
 
                         ?>
-
-
                     </tr>
 
                     <tr>
@@ -56,9 +54,10 @@
                             <a class="btn btn-danger" href="/login_registro/Dash/usuarios_index.php?acao=deletar&id=<?php ?>"><em class="fa fa-trash"></em></a>
 
                         </td>
-                        <?php //recebendo o ID para uma SESSION
-                        ?>
+                        <div class="user-dashboard">
 
+                            <h1>Olá,</h1>
+                        </div>
                         <td><?php "<br/>"; ?></td>
                         <td><?php "<br/>"; ?></td>
                         <td><?php "<br/>"; ?></td>
@@ -84,19 +83,19 @@
                                 </tr>
                             </thead>
 
-                            
-                                <!--  <td align="center"> </td> -->
 
-                                @foreach($logins as $event)
-                                <tr>
-                                <td>{{ $event->id }}<br ></td>
-                                <td>{{ $event->nome }}<br ></td>
-                                <td>{{ $event->email }}<br ></td>
-                                <td>{{ $event->senha }}<br ></td>
+                            <!--  <td align="center"> </td> -->
+
+                            @foreach($logins as $event)
+                            <tr>
+                                <td>{{ $event->id }}<br></td>
+                                <td>{{ $event->nome }}<br></td>
+                                <td>{{ $event->email }}<br></td>
+                                <td>{{ $event->senha }}<br></td>
                                 <td>{{ $event->setor }}<br></td>
-                                </tr>
-                                @endforeach
-                            
+                            </tr>
+                            @endforeach
+
                             <?php
                             //DELETAR REGISTROS SALVOS
 

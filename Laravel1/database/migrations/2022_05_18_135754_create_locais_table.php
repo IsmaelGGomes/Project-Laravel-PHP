@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProdutosTable extends Migration
+class CreatelocaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateProdutosTable extends Migration
      */
     public function up()
     {
-        Schema::create('produtos', function (Blueprint $table) {
+        Schema::create('locais', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("nome_produto");
-            $table->string("local");
-            $table->string("descricao");
-            $table->integer("valor");
-            $table->integer("qtd");
+            $table->string("estado");
+            $table->string("municipio");
+            $table->string("email");
+            $table->string("setor");
+            $table->string("nome");
+            $table->text("descricao");
         });
     }
 
@@ -31,6 +32,6 @@ class CreateProdutosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produtos');
+        Schema::dropIfExists('locais');
     }
 }

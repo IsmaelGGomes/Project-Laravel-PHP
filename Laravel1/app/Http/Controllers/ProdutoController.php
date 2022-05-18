@@ -17,17 +17,16 @@ class ProdutoController extends Controller
 
     public function produto(Request $request){
         
-        $cad = new produto;
+        $cad = new Produto;
 
-        $cad->nome = $request->nome;
-        $cad->email = $request->email;
-        $cad->estado = $request->estado;
-        $cad->setor = $request->setor;
+        $cad->nome_produto = $request->nome_produto;
+        $cad->local = $request->local;
+        $cad->valor = $request->valor;
+        $cad->qtd = $request->qtd;
         $cad->descricao = $request->descricao;
 
         $cad->save();
 
-         return redirect('/produto_registro');
-
+        return redirect('/registro');
     }
 }

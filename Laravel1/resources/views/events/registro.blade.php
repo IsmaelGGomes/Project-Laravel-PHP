@@ -26,7 +26,7 @@
             }
         </style>
 
-        <form action="/events/registro" method="POST">
+        <form action="/evento" method="POST">
 
             @csrf
             <div class="form-group">
@@ -82,6 +82,5 @@
         <!-- <a href="painel2.php?i=back"> <br> <button> Voltar </button> </a> -->
     </div>
 </div>
-
 
 @endsection

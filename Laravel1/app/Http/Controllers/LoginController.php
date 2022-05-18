@@ -15,8 +15,7 @@ class LoginController extends Controller
     }
     
     public function store1(Request $request){
-        //criar um objeto criando uma variavel
-        //Distanciar a classe do model 
+        
         $event = new Login;
 
         $event->nome = $request->nome;
@@ -52,8 +51,27 @@ class LoginController extends Controller
 
     public function edits(){
         return view('events.editar');
-
     }
 
+    /* TELA DE REGISTROS DE USUARIOS FORA */
+    public function registro1(){
+        return view('paginas.registro_fora');
+
+    }
+    
+    public function store2(Request $request){
+        
+        $event = new Login;
+
+        $event->nome = $request->nome;
+        $event->email = $request->email;
+        $event->senha = $request->senha;
+        $event->setor = $request->setor;
+
+        $event->save();
+
+        return redirect('/registro');
+
+    }
     
 }

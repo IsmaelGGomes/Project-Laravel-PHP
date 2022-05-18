@@ -4,7 +4,8 @@
 
 @section('content')
 
-<form action="" method="POST">
+<form action="/cadastro" method="POST">
+    @csrf
 
     <div class="container-fluid">
         <section class="container">
@@ -33,7 +34,7 @@
                         <input type="" name="qtd" class="form-control" id="" value="" placeholder="Insira a quantidade">
                     </div>
 
-                    
+
                     <div class="col-md-7">
                         <!--  <h3 class="dark-grey">Inserir Produto</h3> -->
                         <button class="btn btn-success">Adicionar</button>
