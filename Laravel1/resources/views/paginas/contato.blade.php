@@ -1,4 +1,4 @@
-@extends(layouts.dash_principal)
+@extends('layouts.dash_principal')
 
 @section('title', 'Contato')
 
@@ -36,11 +36,11 @@
 
                 <select name="estado12" class="states order-alpha" id="stateId">
                     <option value="">Selecione o estado</option>
-
-                    @foreach ($estados as $estado)
-                    <?php echo "<option value='" . $estado['sigla'] . "'>" . $estado['nome'] . "</option>"; ?>
-
                     @include('layouts.estados')
+                
+                    @foreach ($estados as $estado)
+                     <?php echo "<option value='" . $estado['sigla'] . "'>" . $estado['nome'] . "</option>"; ?>
+
                     @endforeach
                     <!-- $selecionar_estado = ($_POST[$estado['sigla']]); -->
 

@@ -25,7 +25,7 @@ class LoginController extends Controller
 
         $event->save();
 
-        return redirect('/registro');
+        return redirect('/listaLogin');
 
     }
 
@@ -42,9 +42,18 @@ class LoginController extends Controller
 
     public function lista(){
 
-        $loggers = Login::all();
+        $busca = request('busca');
 
-        return view('paginas.usuarios',['logins' => $loggers]);
+        if ($busca){
+            $loggers = Login::where([
+                ['nome', 'like', '%'.$busca.'%']
+            ])->get();
+
+        }else{
+            $loggers = Login::all();
+        }
+
+        return view('paginas.usuarios',['logins' => $loggers, 'busca' => $busca]);
     }
     
     /* TELA DE EDITAR USUARIOS*/

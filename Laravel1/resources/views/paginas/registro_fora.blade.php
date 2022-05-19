@@ -44,7 +44,7 @@
 </head>
 
 <body>
-
+    
     <center><h1>Registro</h1></center>
     <form action="/usuario_externo" method="POST">
         @csrf

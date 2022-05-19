@@ -74,7 +74,7 @@
                 </div>
                 <br>
                 <br>
-                <input type="submit" class="btn btn-primary" value="Cadastrar">
+                <a href="/listaLogin"><input type="submit" class="btn btn-primary" value="Cadastrar"></a>
                 <br>
         </form>
         <br>

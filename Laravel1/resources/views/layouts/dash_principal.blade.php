@@ -21,7 +21,6 @@
 
 
 <body class="home">
-    
 
     <div class="container-fluid display-table">
 
@@ -72,7 +71,7 @@
 
                             <div class="header-rightside">
                                 <ul class="list-inline header-top pull-right">
-                                    <li class="hidden-xs"><a href="/login_registro/Dash/registro_usuario_index.php" class="add-project">Cadastrar</a></li>
+                                    <li class="hidden-xs"><a href="/events/registro" class="add-project">Cadastrar</a></li>
                                     <li>
                                         <a href="#" class="icon-info">
                                             <i class="fa fa-bell" aria-hidden="true"></i>
