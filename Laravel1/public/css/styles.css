@@ -45,7 +45,6 @@ font-weight: bold;
 
 }
 
-
 /* FLASH DE MENSAGEM QUANDO CADASTRA UM EVENTO*/
 .msg{
 background-color: #D4EDDA;
@@ -60,4 +59,9 @@ padding: 10px;
 #event-creat-container select,
 #event-creat-container input,
  */
+
+ #dangers{
+    display: inline-block;
+
+ }
 

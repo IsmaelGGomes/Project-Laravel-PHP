@@ -700,4 +700,11 @@ header {
     width: 100%;
 }
 }
+
+}
+
+#dangers{
+    display: inline-block;
+    border-radius: 4px;
+    
 }

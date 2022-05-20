@@ -11,7 +11,7 @@
         <div class="painel-body">
             <table class="table table-striped table-bordered table-list">
                 <thead>
-                    
+
                 </thead>
                 <tbody>
                     <tr>
@@ -41,34 +41,37 @@
                         <th>Setor</th>
                     </tr>
                     @foreach($logins as $event)
-                    <tr>
-                        <td align="center">
+                        <tr>
+                            <td align="center">
 
-                            <a class="btn btn-default" href="/login_registro/Dash/editar_usuario_index.php"><em class="fa fa-pencil"></em></a>
-
-                            <a class="btn btn-danger" href="/login_registro/Dash/usuarios_index.php?acao=deletar&id=<?php ?>"><em class="fa fa-trash"></em></a>
-
-                        </td>
-                        <td>{{ $event->id }}<br></td>
-                        <td>{{ $event->nome }}<br></td>
-                        <td>{{ $event->email }}<br></td>
-                        <td>{{ $event->senha }}<br></td>
-                        <td>{{ $event->setor }}<br></td>
-                    </tr>
+                                <a class="btn btn-default" href="/login_registro/Dash/editar_usuario_index.php"><em class="fa fa-pencil"></em></a>
+                                <form action="/listaLogin/{{ $event->id }}" method="POST" id="danger">
+                                    @csrf
+                                    @method('DELETE')                                
+                                    <button class="btn btn-danger" id="dangers"> <em class="fa fa-trash" ></em>
+                                
+                                </form>
+                            </td>
+                            <td>{{ $event->id }}<br></td>
+                            <td>{{ $event->nome }}<br></td>
+                            <td>{{ $event->email }}<br></td>
+                            <td>{{ $event->senha }}<br></td>
+                            <td>{{ $event->setor }}<br></td>
+                        </tr>
 
                     @endforeach
 
                     @else
-                        @if ($busca ==0)
-                        <div class="alert alert-danger" role="alert">
-                            ID NÃO ENCONTRADO
-                        </div>
-                        @endif
+                    @if ($busca ==0)
+                    <div class="alert alert-danger" role="alert">
+                        ID NÃO ENCONTRADO
+                    </div>
+                    @endif
 
                     @endif
                 </tbody>
 
-                <?php if (!$cont){?>
+                <?php if (!$cont) { ?>
                     <div class="painel-body">
                         <table class="table table-striped table-bordered table-list">
                             <thead>
@@ -97,11 +100,11 @@
 
                                 ?>
                                 </tr>
-                            </tbody> 
+                            </tbody>
                         </table>
 
                     </div>
-                <?php }?>
+                <?php } ?>
             </table>
         </div>
 

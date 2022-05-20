@@ -55,19 +55,25 @@ Route::get('/login',[LoginController::class,'login']);
 
 Route::get('/listaLogin',[LoginController::class,'lista']);
 
-Route::get('/lista',[EventController::class,'listagem']);
+Route::get('/lista',[LoginController::class,'listagem']);
 
 //EVENTO DE EDITAR
 
 Route::get('/editar', [LoginController::class,'edits']);
 
-Route::post('/events/registro',[LoginController::class,'registro']);
+Route::get('/listaLogin/{id}', [LoginController::class,'edit']);
+
+
 
 //EVENTO DE CADASTRAR PRODUTO
 
 Route::get('/events/cadastroProdutos', [ProdutoController::class,'cadastroProduto']);
 
 Route::post('/cadastro',[ProdutoController::class,'produto']);
+
+//EVENTO DE DELETAR O CADASTRO
+
+Route::delete('/listaLogin/{id}', [LoginController::class,'destroy']);
 
 //TELA REGISTRO DE USUARIO EXTERNO
 
@@ -77,9 +83,11 @@ Route::get('/registro_usuario',[LoginController::class,'registro1']);
 
 //TELA FORMULÁRIO DE CONTATO
 
-Route::post('/contato',[LocalController::class,'store3']);
+Route::post('/listaLogin',[LocalController::class,'store3']);
 
 Route::get('/contato_index',[LocalController::class,'registro3']);
+
+Route::get('/contato_index',[LocalController::class,'proc']);
 
 
 

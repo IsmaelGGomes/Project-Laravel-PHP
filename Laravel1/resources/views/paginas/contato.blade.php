@@ -9,11 +9,11 @@
     <div class="login-main-text1">
         <h2>Formulario de Contato<br></h2>
     </div>
-    <form action="/contato" method="POST">
+    <form action="/lis" method="POST">
 
         <div class="form-group">
             <label><b>Nome</b></label>
-            <input type="text" class="form-control" placeholder="Insira seu nome completo" name="nome1" id="input_email">
+            <input type="text" class="form-control" placeholder="Insira seu nome completo" name="nome1" id="input_email" >
         </div>
         <div class="form-group">
             <label><b>Email</b></label>
@@ -36,12 +36,13 @@
 
                 <select name="estado12" class="states order-alpha" id="stateId">
                     <option value="">Selecione o estado</option>
-                    @include('layouts.estados')
-                
-                    @foreach ($estados as $estado)
-                     <?php echo "<option value='" . $estado['sigla'] . "'>" . $estado['nome'] . "</option>"; ?>
+                    
+                        @foreach( $estados as $estado)
 
-                    @endforeach
+                            <?php echo "<option value='" .$estado['sigla'] . "'>" . $estado['nome'] . "</option>"; ?>
+
+                        @endforeach
+
                     <!-- $selecionar_estado = ($_POST[$estado['sigla']]); -->
 
                 </select>
@@ -77,7 +78,6 @@
         <br>
         <a href="/login_registro/Dash/index.php"><button class="btn btn-primary" type="button"> Voltar</button></a>
     </form>
-
 </div>
 
 @endsection

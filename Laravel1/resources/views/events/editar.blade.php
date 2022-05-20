@@ -6,7 +6,6 @@
 
 <div class="container-fluid" id="trazer">
 
-
     <div class="user-dashboard">
         <div class="row">
 
@@ -31,7 +30,9 @@
                         width:65%;
                     }
                 </style>
-                <form atcion="" method="POST">
+                <form atcion="/events/editar" method="POST">
+                    @csrf
+                    @method('PUT')
                     <div class="form-group">
 
                         <br>

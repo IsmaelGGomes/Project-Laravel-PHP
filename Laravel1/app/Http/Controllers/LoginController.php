@@ -37,7 +37,6 @@ class LoginController extends Controller
     /* TELA DE REGISTROS DE USUARIOS*/
     public function listagem(){
         return view('paginas.usuarios');
-
     }
 
     public function lista(){
@@ -62,10 +61,16 @@ class LoginController extends Controller
         return view('events.editar');
     }
 
+    public function edit($id){
+        
+        $event = Login::findOrFail($id);
+
+        return view('events.editar',['event' => $edit]);
+    }
+
     /* TELA DE REGISTROS DE USUARIOS FORA */
     public function registro1(){
         return view('paginas.registro_fora');
-
     }
     
     public function store2(Request $request){
@@ -82,5 +87,16 @@ class LoginController extends Controller
         return redirect('/registro');
 
     }
+
+    /* EVENTO DE DELETAR O CADASTRO */
     
-}
+    /* recebendo o id da rota */
+    public function destroy($id){
+
+        Login::findOrfail($id)->delete();
+
+        return redirect('/listaLogin')->with('msg', 'Usuário excluído com sucesso !');
+
+    }
+    
+}   
