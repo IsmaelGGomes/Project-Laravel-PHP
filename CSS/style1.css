@@ -1,0 +1,44 @@
+* {
+    padding: 1px;
+    font-family: arial;
+    position:relative;
+  
+}
+
+input[nome='nome'],button[name=botao1]{
+    
+    line-height: 30px;
+    height: 30px;
+    font-size: 10pt;
+    width: 78%;
+    
+}
+form[name=form1]{
+    width: 250px;
+    background-color: rgb(233, 233, 233);
+    padding: 10px;
+    margin: 0px auto;
+}
+
+#direita{
+    width: 20%;
+    float: left;
+}
+#esquerda{
+    width: 20%;
+    float: left;
+}
+
+
+
+#registro_input{
+    width: 11%;
+}
+label[nome='registro_email']{
+    line-height: 30px;
+    width: 78%;
+}
+
+#caixa_suspensa{
+
+}
