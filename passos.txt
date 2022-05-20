@@ -1,0 +1,24 @@
+se o usuário acionar ->
+
+botão-> ação do botão -> mandar a ação pesquisar-> variavel guarda a pesquisa
+
+----------------------------------------------------------------------------------
+
+Criar um fitro para que quando o usuario insira algo ele filtre  aquilo relacionado.
+
+(ok)Feito com array.
+
+(ok)Mandar o dado para o banco de dados.
+
+(ok)observar como foi feito no method POST. PAGINA REGISTRO.
+
+(ok)configurar as variaveis para receber atraveis de INPUT conforme o nome dado.
+----------------------------------------
+inserir as variaveis do nome.
+verificar o erro do email e da descricao.
+inserir o campo para a descricao.
+fazer a validacao para quando cadastrar imprimir a mensagem na tela.
+----------------------------------------
+Diagrama de UML
+
+https://github.com/aryarj/cadCliente/blob/main/cadentreg.sql
