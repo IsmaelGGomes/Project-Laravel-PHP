@@ -4,16 +4,17 @@
 
 @section('content')
 
-<div class="sidenav" id="#">
-    <link rel="stylesheet" href="/login_registro/css/LOGIN2.css">
+
+<div class="container">
+
     <div class="login-main-text1">
         <h2>Formulario de Contato<br></h2>
     </div>
-    <form action="/lis" method="POST">
+    <form action="/lista" method="POST">
 
         <div class="form-group">
             <label><b>Nome</b></label>
-            <input type="text" class="form-control" placeholder="Insira seu nome completo" name="nome1" id="input_email" >
+            <input type="text" class="form-control" placeholder="Insira seu nome completo" name="nome1" id="input_email">
         </div>
         <div class="form-group">
             <label><b>Email</b></label>
@@ -36,32 +37,18 @@
 
                 <select name="estado12" class="states order-alpha" id="stateId">
                     <option value="">Selecione o estado</option>
-                    
-                        @foreach( $estados as $estado)
 
-                            <?php echo "<option value='" .$estado['sigla'] . "'>" . $estado['nome'] . "</option>"; ?>
+                    @foreach( $estados as $estado)
 
-                        @endforeach
+                    <?php echo "<option value='" . $estado['sigla'] . "'>" . $estado['nome'] . "</option>"; ?>
+
+                    @endforeach
 
                     <!-- $selecionar_estado = ($_POST[$estado['sigla']]); -->
 
                 </select>
                 <select name="municipio" class="cities order-alpha" id="cityId">
-                    <?php
-                    //$select ="SELECT * FROM municipio WHERE nome= $selecionar_estado";
 
-                    //foreach ($select as $dados) { 
-                    //echo "<option value='" . $dados['nome'] . "'>" . "</option>"; 
-                    ?>
-
-                    <?php //if($select == $dados['nome'])
-                    //{ echo "selected"; } 
-                    ?>
-                    <?php //echo $dados['nome']; 
-                    ?>
-
-                    <?php //} 
-                    ?>
                 </select>
 
             </div>
@@ -76,7 +63,7 @@
         <button class="col-md-1,5 btn btn-success"> Enviar </button>
         <br>
         <br>
-        <a href="/login_registro/Dash/index.php"><button class="btn btn-primary" type="button"> Voltar</button></a>
+        
     </form>
 </div>
 

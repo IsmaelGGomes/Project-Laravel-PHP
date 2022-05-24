@@ -31,7 +31,7 @@
                     }
                 </style>
                 <h1><!-- Editando:  --></h1>
-                <form atcion="/events/editar/" method="POST" enctype="multipart/form-data">
+                <form atcion="/events/editar" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">

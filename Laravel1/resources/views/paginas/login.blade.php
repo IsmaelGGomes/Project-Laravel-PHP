@@ -52,8 +52,8 @@ use Symfony\Component\VarDumper\VarDumper;
             <link rel="stylesheet" href="css/LOGIN2.css">
             <div class="col-md-6 col-sm-12">
                 <div class="login-form">
-                    <form action="" method="POST">
-
+                    <form action="{{ route('login') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label><b>E-mail</b></label>
                             <input type="text" class="form-control" placeholder="Insira o e-mail" name="email">

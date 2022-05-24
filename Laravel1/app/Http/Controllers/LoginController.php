@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Login;
 
+use Illuminate\Support\Facades\Auth;
+
 class LoginController extends Controller
 {
     
@@ -36,15 +38,30 @@ class LoginController extends Controller
 
             $event->imagem = $imageName;
         }
+
         $event->save();
 
         return redirect('/listaLogin')->with('msg', 'Evento criado com sucesso!');
 
-    }                                   
+    }  
 
-    public function login(){
+    /* TELA DE LOGIN */
+
+    public function login(Request $request){
+
+        if (Login::attempt(['email' => $request->email, 'senha' => $request->senha,'setor' => $request->setor ])) {
+          
+            dd('esta logado');
+        }else{
+            dd('não esta logado'); 
+        }
+
         return view('paginas.login');
 
+    }
+
+    public function show(){
+        return view('paginas.login');
     }
 
     /* TELA DE REGISTROS DE USUARIOS*/

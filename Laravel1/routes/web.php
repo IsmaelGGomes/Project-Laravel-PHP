@@ -5,6 +5,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\LocalController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,7 +50,10 @@ Route::get('/events/registro',[LoginController::class,'registro']);
 
 //TELA DE LOGIN-------------------------------------------------
 
-Route::get('/login',[LoginController::class,'login']);
+Route::get('/paginas/login',[LoginController::class,'show'])->name('paginas.login');
+
+Route::get('/login',[LoginController::class,'login'])->name('login');
+
 
 //TELA LISTA DE LOGIN
 
@@ -73,8 +77,6 @@ Route::post('/events/cadastroProdutos',[ProdutoController::class,'produto']);
 
 Route::get('/events/impressao',[ProdutoController::class,'imp']);
 
-
-
 //EVENTO DE DELETAR O CADASTRO
 
 Route::delete('/listaLogin/{id}', [LoginController::class,'destroy']);
@@ -87,7 +89,7 @@ Route::get('/registro_usuario',[LoginController::class,'registro1']);
 
 //TELA FORMULÁRIO DE CONTATO
 
-Route::post('/listaLogin',[LocalController::class,'store3']);
+Route::post('/lista',[LocalController::class,'store3']);
 
 Route::get('/contato_index',[LocalController::class,'registro3']);
 

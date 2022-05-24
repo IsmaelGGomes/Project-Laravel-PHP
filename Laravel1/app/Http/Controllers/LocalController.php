@@ -25,7 +25,7 @@ class LocalController extends Controller
 
         $event->save();
 
-        return redirect('/listaLogin');
+        return redirect('/list')->with('msg', 'Formulário enviado !');
     }
 
     public function proc(){

@@ -14,6 +14,9 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    
+
 </head>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -50,12 +53,12 @@
 
                 </div>
             </div>
-            
+
             <div class="col-md-10 col-sm-11 display-table-cell v-align">
-            
+
                 <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
                 <div class="row">
-                
+
 
                     <header>
 
@@ -84,9 +87,10 @@
                 </div>
                 <div class="user-dashboard">
 
-                <?php $titulo="recebendo" ;?>
+                    <?php $titulo = "recebendo"; ?>
 
-                    <!-- <h1>Olá, <?php //echo $_SESSION['nome'] ?></h1> -->
+                    <!-- <h1>Olá, <?php //echo $_SESSION['nome'] 
+                                    ?></h1> -->
 
                 </div>
             </div>

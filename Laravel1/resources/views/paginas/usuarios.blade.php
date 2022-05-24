@@ -21,7 +21,7 @@
                                     <p>
                                     <form action="/listaLogin" method="get">
                                         <input type="text" name="busca" placeholder=" Insira o Nome" size="54">
-                                        <a href="{{ route('editar', ['id' => $logins->id]) }}"><button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button></a>
+                                        <a href="{{--route('editar', ['id' => $logins->id])--}}"><button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button></a>
                                     </form>
                                     <!-- // -->
                                     </p>
@@ -45,7 +45,7 @@
                         <tr>
                             <td align="center">
 
-                                <a class="btn btn-default" href="/login_registro/Dash/editar_usuario_index.php"><em class="fa fa-pencil"></em></a>
+                                <a class="btn btn-default" href="/editar/{{ $event->id}}"><em class="fa fa-pencil"></em></a>
                                 <form action="/listaLogin/{{ $event->id }}" method="POST" id="danger">
                                     @csrf
                                     @method('DELETE')                                
