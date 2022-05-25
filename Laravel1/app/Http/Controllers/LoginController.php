@@ -77,25 +77,35 @@ class LoginController extends Controller
             $loggers = Login::where([
                 ['nome', 'like', '%'.$busca.'%']
             ])->get();
-
+            $cont=1;
         }else{
             $loggers = Login::all();
+            $cont=0;
         }
-
-        return view('paginas.usuarios',['logins' => $loggers, 'busca' => $busca]);
+        return view('paginas.usuarios',['logins' => $loggers, 'busca' => $busca, 'cont'=>$cont]);
     }
     
     /* TELA DE EDITAR USUARIOS*/
 
-    public function edits(){
-        return view('events.editar');
+    public function edits($id){
+
+        $quest = Login::find($id);
+
+        return view('events.editar', ['file' => $quest]);
     }
 
-    public function edit($id) {
+    public function edit(Request $request, $id) {
         
-        $edit = Login::findOrFail($id);
+        $quest = Login::find($id);
+        $quest ->update([
+            
+            'nome' => $request->nome,
+            'email' => $request->email,
+            'senha' => $request->senha,
+            'setor' => $request->setor,
+        ]);
 
-        return view('events.editar',['edit' => $edit]);
+        return redirect('listaLogin')->with('msg','Cadastro Editado !');
     }
 
     /* TELA DE REGISTROS DE USUARIOS FORA */

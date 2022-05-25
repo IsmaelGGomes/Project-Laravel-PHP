@@ -10,18 +10,19 @@
     <div class="login-main-text1">
         <h2>Formulario de Contato<br></h2>
     </div>
-    <form action="/lista" method="POST">
+    <form action="/contato_index" method="POST">
+        @csrf
 
         <div class="form-group">
             <label><b>Nome</b></label>
-            <input type="text" class="form-control" placeholder="Insira seu nome completo" name="nome1" id="input_email">
+            <input type="text" class="form-control" placeholder="Insira seu nome completo" name="nome" id="input_email">
         </div>
         <div class="form-group">
             <label><b>Email</b></label>
-            <input type="email" class="form-control" placeholder="Insira o e-mail" name="email1" id="input_senha">
+            <input type="email" class="form-control" placeholder="Insira o e-mail" name="email" id="input_senha">
         </div>
         <label><b>Setor</b></label>
-        <select class="form-control" id="dropdown" name="setor1">
+        <select class="form-control" id="dropdown" name="setor">
             <option>Biblioteca</option>
             <option>Estacionamento</option>
             <option>TI</option>
@@ -35,7 +36,7 @@
                         <option value="">Selecione o pais</option>
                     </select> -->
 
-                <select name="estado12" class="states order-alpha" id="stateId">
+                <select name="estado" class="states order-alpha" id="stateId">
                     <option value="">Selecione o estado</option>
 
                     @foreach( $estados as $estado)
@@ -47,7 +48,7 @@
                     <!-- $selecionar_estado = ($_POST[$estado['sigla']]); -->
 
                 </select>
-                <select name="municipio" class="cities order-alpha" id="cityId">
+                <select  class="cities order-alpha" id="cityId">
 
                 </select>
 
@@ -63,7 +64,7 @@
         <button class="col-md-1,5 btn btn-success"> Enviar </button>
         <br>
         <br>
-        
+
     </form>
 </div>
 

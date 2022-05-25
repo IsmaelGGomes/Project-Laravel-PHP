@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Login extends Model
 {
+
+    protected $fillable = ['nome','senha','email', 'setor', 'imagem'];
+
+    protected $table = 'logins';
+    
     use HasFactory;
 }
 ?>

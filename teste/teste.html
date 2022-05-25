@@ -1,36 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dropdown menu</title>
-	<link rel="stylesheet" href="./style.css">
-</head>
-<body>
-	<section>
-		<div class="bg"></div>
-	
-	<select id="select-state" onchange="changeBackground(this)">
-		<option value="./pics/icon1.png">Goa</option>
-		<option value="./icon2.png">Himachal Pradesh</option>
-		<option value="pics/icon3.png">Jammu & Kashmir</option>
-		<option value="pics/icon4.jpg">Kerala</option>
-		<option value="pics/icon5.jpg">Punjab</option>
-		
-	</select>
-	</section>
-       <script type="text/javascript">
-       	function changeBackground(getbg){
-       		let bg = document.querySelector(".bg");
-       		let pic = getbg.value;
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-       		console.log(pic);
-            bg.style.background = 'url('+pic+')';
-            bg.style.backgroundSize = "cover";
-            bg.style.backgroundPosition = "center";
+<link rel="stylesheet" href="./style.css">
+<!------ Include the above in your HEAD tag ---------->
 
-       	}
-
-       </script>
-</body>
-</html>
+<div class="container">
+	<div class="row">
+        <div class="span12">
+            <form id="custom-search-form" class="form-search form-horizontal pull-right">
+                <div class="input-append span12">
+                    <input type="text" class="search-query" placeholder="Search">
+                    <button type="submit" class="btn"><i class="icon-search"></i></button>
+                </div>
+            </form>
+        </div>
+	</div>
+</div>

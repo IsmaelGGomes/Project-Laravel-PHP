@@ -17,15 +17,16 @@ class LocalController extends Controller
         
         $event = new Local;
 
-        $event->nome1 = $request->nome1;
-        $event->email1 = $request->email1;
-        $event->setor1 = $request->setor1;
-        $event->estado12 = $request->estado12;
+        $event->nome = $request->nome;
+        $event->email = $request->email;
+        $event->setor = $request->setor;
+        $event->estado = $request->estado;
         $event->descricao = $request->descricao;
+        
 
         $event->save();
 
-        return redirect('/list')->with('msg', 'Formulário enviado !');
+        return redirect('/contato_index')->with('msg', 'Formulário enviado !');
     }
 
     public function proc(){

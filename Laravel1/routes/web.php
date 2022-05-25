@@ -63,15 +63,15 @@ Route::get('/lista',[LoginController::class,'listagem']);
 
 //EVENTO DE EDITAR
 
-Route::get('/editar', [LoginController::class,'edits']);
+Route::get('/editar-cadastro/{id}', [LoginController::class,'edits']);
 
-Route::get('/editar/{id}', [LoginController::class,'edit']);
+Route::post('/editar-cadastro/{id}', [LoginController::class,'edit']);
 
 //EVENTO DE CADASTRAR PRODUTO
 
 Route::get('/events/cadastroProdutos', [ProdutoController::class,'cadastroProduto']);
 
-Route::post('/events/cadastroProdutos',[ProdutoController::class,'produto']);
+Route::get('/events/cadastroProdutos',[ProdutoController::class,'produto']);
 
 //EVENTO DE IMPRIMIR O RELATORIO
 
@@ -89,11 +89,25 @@ Route::get('/registro_usuario',[LoginController::class,'registro1']);
 
 //TELA FORMULÁRIO DE CONTATO
 
-Route::post('/lista',[LocalController::class,'store3']);
+Route::post('/contato_index',[LocalController::class,'store3']);
 
 Route::get('/contato_index',[LocalController::class,'registro3']);
 
 Route::get('/contato_index',[LocalController::class,'proc']);
+
+//TELA DE HOME
+
+Route::get('/home', function () {
+    return view('layouts.dash_principal');
+});
+
+//TELA DE MARKET
+
+Route::get('/loja', function(){
+
+    return view('paginas.market');
+});
+
 
 
 

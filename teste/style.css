@@ -1,45 +1,37 @@
-@font-face{
-	src: url(../fonts/Poppins-Regular.ttf);
-	font-family: poppins;
-}
-*{
+#custom-search-form {
+	margin:0;
+	margin-top: 5px;
 	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	font-family: poppins;
 }
-section{
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	/*background:hsla(50deg,100%,50%,1);*/
-}
-.bg{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:url(../pics/goa.jpg);
-    background-size: cover;
-    background-position:center;
-    transition: 0.5;
-}
-#select-state{
-	position:relative;
-	padding: 10px;
-	border-radius: 4px;
-	width: 250px;
-	height:50px;
-	font-size: 1.2em;
-	border:none;
-	box-shadow:0 15px 25px rgba(0,0,0,0.1);
-	border-right: 10px solid #fff;
 
+#custom-search-form .search-query {
+	padding-right: 3px;
+	padding-right: 4px \9;
+	padding-left: 3px;
+	padding-left: 4px \9;
+	/* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+	margin-bottom: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
-#select-state:focus{
-	outline: none;
+
+#custom-search-form button {
+	border: 0;
+	background: none;
+	/** belows styles are working good */
+	padding: 2px 5px;
+	margin-top: 2px;
+	position: relative;
+	left: -28px;
+	/* IE7-8 doesn't have border-radius, so don't indent the padding */
+	margin-bottom: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.search-query:focus + button {
+	z-index: 3;   
 }
