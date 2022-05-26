@@ -57,7 +57,7 @@
             <div class="form-group">
                 <br>
                 <label><b>Descrição</b></label>
-                <textarea id="" name="descricao" class="form-control" required placeholder="Insira um comentário"></textarea>
+                <textarea id="descricao" name="descricao" class="form-control" required placeholder="Insira um comentário"></textarea>
             </div>
             <br>
         </div>

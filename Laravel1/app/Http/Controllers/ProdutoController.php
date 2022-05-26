@@ -51,4 +51,22 @@ class ProdutoController extends Controller
     public function mostrar_imp(){
         return view('events.imprimir');
     }
+
+    /* TELA DO MARKEPLACE */
+
+    public function show(){
+
+        return redirect('paginas.market');
+    }
+    public function query(){
+
+       
+        
+    
+        //$pg= ($show == '' ? 1 : $show);
+        
+        $events = Produto::all();
+
+        return view ('paginas.market', ['query'=> $events]);
+    }
 }

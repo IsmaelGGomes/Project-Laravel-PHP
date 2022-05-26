@@ -19,7 +19,7 @@
                                 <div class="col col-xs-6">
                                     <p>
                                         <form action="/listaLogin" method="get">
-                                            <input class="search-query" type="text" name="busca" placeholder=" Insira o Nome" size="54">
+                                            <input id="cat" class="search-query" type="text" name="busca" placeholder=" Insira o Nome" size="54">
                                             <a href="{{--route('editar', ['id' => $logins->id])--}}"><button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button></a>
                                         </form>
                                     </p>

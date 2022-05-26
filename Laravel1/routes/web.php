@@ -71,7 +71,7 @@ Route::post('/editar-cadastro/{id}', [LoginController::class,'edit']);
 
 Route::get('/events/cadastroProdutos', [ProdutoController::class,'cadastroProduto']);
 
-Route::get('/events/cadastroProdutos',[ProdutoController::class,'produto']);
+Route::post('/events/cadastroProdutos',[ProdutoController::class,'produto']);
 
 //EVENTO DE IMPRIMIR O RELATORIO
 
@@ -107,6 +107,10 @@ Route::get('/loja', function(){
 
     return view('paginas.market');
 });
+
+Route::get('/loja',[ProdutoController::class,'query']);
+
+
 
 
 

@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Usuarios</title>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -71,12 +72,16 @@
                     $resultado_pesquisa = "SELECT * FROM acesso_novo";
                     $resultado_query = mysqli_query($mysqli, $resultado_pesquisa);
                     ?>
-
+                        <!-- while ($proc2 = mysqli_fetch_assoc($resultado_query)) -->
 
                     <?php
                     //if ($resultado_query->num_rows == 1) {
+                        $proc2 = ($resultado_query);
+                           
+                       foreach($resultado_query as $contador => $busca){
+                        
 
-                    while ($proc2 = mysqli_fetch_assoc($resultado_query)) { ?>
+                        if ($contador == 0){ ?>
                         <div class="carousel-inner">
                             <div class="item carousel-item active">
                                 <div class="row">
@@ -99,9 +104,31 @@
                                 </div>
                             </div>
                         </div>
-                    <?php }
-                    //} else { 
-                    ?>
+                    <?php }else { ?>
+
+                        <div class="carousel-inner">
+                            <div class="item carousel-item">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="thumb-wrapper">
+                                            <div class="img-box">
+                                                <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4><?php echo $proc2['id'] ?></h4>
+                                                <p class="item-price"><b>Nome: </b><span><?php echo $proc2['nome'] . "<br/>"; ?></span></p>
+                                                <p><b>Email: </b><?php echo $proc2['email'] ?></p>
+                                                <p class=""><b>Senha: </b><?php echo $proc2['senha'] ?></p>
+                                                <p class=""><b>Setor: </b><?php echo $proc2['setor'] ?></p>
+
+                                                <a href="#" class="btn btn-primary">Adicionar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php }}?>
 
                     <?php /* while ($proc1 = mysqli_fetch_assoc($resultado_query1)) { ?>
 
@@ -137,6 +164,7 @@
 
             </div>
         </div>
+    </div>
 </body>
 
 </html>

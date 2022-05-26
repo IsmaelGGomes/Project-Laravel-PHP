@@ -757,3 +757,25 @@ header {
 .search-query:focus + button {
 	z-index: 3;   
 }
+
+/* AREA DE INPUT FORMULARIO DE CADASTRO */
+#input_email{
+    width: 650px;
+}
+#input_senha{
+    width: 650px;
+}
+#dropdown{
+    width: 650px;
+}
+#descricao{
+    width: 650px;
+}
+#dropdown_country{
+    width: 650px;
+}
+
+#cat{
+    width: 300px;
+}
+
