@@ -48,11 +48,11 @@ Route::post('/evento',[LoginController::class,'store1']);
 
 Route::get('/events/registro',[LoginController::class,'registro']);
 
-//TELA DE LOGIN-------------------------------------------------
+//TELA DE LOGIN-------------------------------------------------->name('login')
 
-Route::get('/paginas/login',[LoginController::class,'show'])->name('paginas.login');
+Route::post('/login',[LoginController::class,'login'])->name('login');
 
-Route::get('/login',[LoginController::class,'login'])->name('login');
+Route::get('/login',[LoginController::class,'show'])->name('paginas.login');
 
 
 //TELA LISTA DE LOGIN

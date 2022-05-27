@@ -8,6 +8,7 @@ use App\Models\Login;
 
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController extends Controller
 {
     
@@ -48,8 +49,9 @@ class LoginController extends Controller
     /* TELA DE LOGIN */
 
     public function login(Request $request){
+        
 
-        if (Login::attempt(['email' => $request->email, 'senha' => $request->senha,'setor' => $request->setor ])) {
+        if (Auth::attempt(['email' => $request->email, 'senha' => $request->senha,'setor' => $request->setor ])) {
           
             dd('esta logado');
         }else{
@@ -82,6 +84,7 @@ class LoginController extends Controller
             $loggers = Login::all();
             $cont=0;
         }
+        
         return view('paginas.usuarios',['logins' => $loggers, 'busca' => $busca, 'cont'=>$cont]);
     }
     

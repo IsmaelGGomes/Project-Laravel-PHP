@@ -60,9 +60,6 @@ class ProdutoController extends Controller
     }
     public function query(){
 
-       
-        
-    
         //$pg= ($show == '' ? 1 : $show);
         
         $events = Produto::all();
