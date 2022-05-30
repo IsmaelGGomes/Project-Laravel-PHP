@@ -49,7 +49,6 @@
                         <span class="input-group-addon"> <i class="fa fa-user fa" aria-hidden="true"> </i> </span>
                         <input type="text" name="nome" placeholder="Insira seu nome" />
                     </div>
-
                 </div>
 
 

@@ -51,7 +51,7 @@ class LoginController extends Controller
     public function login(Request $request){
         
 
-        if (Auth::attempt(['email' => $request->email, 'senha' => $request->senha,'setor' => $request->setor ])) {
+        if (Auth::attempt(['email' => $request->email, 'senha' => $request->password,'setor' => $request->setor ])) {
           
             dd('esta logado');
         }else{

@@ -30,8 +30,9 @@
                         <input type="" name="valor" class="form-control" id="" value="" placeholder="Valor do produto">
                     </div>
                     <div class="form-group col-lg-6">
-                        <label>Quantidade</label>
-                        <input type="" name="qtd" class="form-control" id="" value="" placeholder="Insira a quantidade">
+                        <label for="imagem">Imagem do Produto</label>
+
+                        <input type="file" id="imagem" name="imagem" class="form-control-file">
                     </div>
 
 

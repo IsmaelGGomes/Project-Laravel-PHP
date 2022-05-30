@@ -36,6 +36,7 @@
                         <th>Email</th>
                         <th>Senha</th>
                         <th>Setor</th>
+                        <th>Imagem</th>
                     </tr>
                     @foreach($logins as $event)
                         <tr>
@@ -53,6 +54,7 @@
                             <td>{{ $event->email }}<br></td>
                             <td>{{ $event->senha }}<br></td>
                             <td>{{ $event->setor }}<br></td>
+                            <td><img src="img/events/{{ $novo->imagem }}"></td>
                         </tr>
 
                     @endforeach
@@ -76,6 +78,7 @@
                                     <th>Email</th>
                                     <th>Senha</th>
                                     <th>Setor</th>
+                                    <th>imagem</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -87,6 +90,9 @@
                                     <td>{{ $novo->email }}<br></td>
                                     <td>{{ $novo->senha }}<br></td>
                                     <td>{{ $novo->setor }}<br></td>
+                                    <div id="imagemselect">
+                                    <td><img src="img/events/{{ $novo->imagem }}"></td>
+                                    </div>
                                 </tr>
                                 @endforeach
 
