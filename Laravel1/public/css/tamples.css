@@ -779,8 +779,13 @@ header {
     width: 300px;
 }
 
-#imagemselect{
-    height:30px;
-    width: 30px;
+img{
+    height: 150;
+    width: 150px;
+}
+
+#sel{
+    height: 100px;
+    width: 100px;
 }
 

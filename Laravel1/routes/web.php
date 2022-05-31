@@ -5,6 +5,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\LocalController;
+use App\Http\Controllers\CarroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,14 +112,7 @@ Route::get('/loja', function(){
 Route::get('/loja',[ProdutoController::class,'query']);
 
 
+//EVENTO DE CARRINHO
+Route::post('/finalizar-compra',[CarroController::class,'store']);
 
-
-
-
-
-
-
-
-
-
-
+Route::get('/finalizar-compra',[CarroController::class,'show']);

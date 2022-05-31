@@ -37,9 +37,10 @@
         float: right;
 
     }
-    #selectid{
+
+    #selectid {
         width: 200px;
-        
+
     }
 </style>
 
@@ -49,7 +50,7 @@
             <div class="card">
 
                 <div id="shop">
-                    <a href="/events/cadastroProdutos"><i class="fa fa-shopping-cart fa-4x" aria-hidden="true"></i></a>
+                    <a href="/finalizar-compra"><i class="fa fa-shopping-cart fa-4x" aria-hidden="true"></i></a>
                 </div>
 
                 <div class="card-body p-0">
@@ -74,45 +75,47 @@
                                 <!-- Wrapper for slides -->
 
                                 <div class="carousel-inner">
+
                                     @foreach ($query as $busca)
+
                                     <div class="item">
                                         <div class="row" id="primeiro">
-
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-2">
                                                 <div class="thumb-wrapper">
                                                     <div class="img-box">
                                                         <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
                                                     </div>
-                                                    <form action="/loja" method="POST">
+                                                    <form action="/finalizar-compra" method="POST">
+                                                        @csrf
                                                         <div class="thumb-content">
                                                             <center>
                                                                 <h4>{{$busca->id}}</h4>
                                                             </center>
-                                                            <p class="item-price"><b>Nome:</b><span>{{$busca->nome_produto}}<br /></span></p>
-                                                            <p class=""><b>Senha: </b>{{$busca-> local}}</p>
-                                                            <p class=""><b>Setor: </b>{{$busca-> descricao}}</p>
-                                                            <p class=""><b>valor: </b>{{$busca-> valor}}</p>
-                                                            
-                                                            <b>Quantidade</b><span><input class="form-control" name="selectid"></span>
+                                                            <p class="item-price" name="nome_produto"><b>Nome:</b><span>{{$busca->nome_produto}}<br /></span></p>
+                                                            <p class="" name="local"><b>Senha: </b>{{$busca-> local}}</p>
+                                                            <p class="" name="descricao"><b>Setor: </b>{{$busca-> descricao}}</p>
+                                                            <p class="" name="valor"><b>valor: </b>{{$busca-> valor}}</p>
 
-                                                            <a href="#" class="btn btn-primary">Adicionar</a>
+                                                            <b>Quantidade</b><span><input class="form-control" name="quantidade"></span>
+
+                                                            <a href="#" class="btn btn-primary" type="submit">Adicionar</a>
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
 
                                     @endforeach
-
                                 </div>
 
                                 <div class="carousel-inner">
                                     @foreach ($query as $busca)
+
                                     <div class="item">
                                         <div class="row" id="segundo">
-                                            <div class="col-sm-3">
+
+                                            <div class="col-sm-2">
                                                 <div class="thumb-wrapper">
                                                     <div class="img-box">
                                                         <img src="https://i.ibb.co/gFfmmch/pngwing-com.png" class="img-responsive img-fluid" alt="">
@@ -125,15 +128,16 @@
                                                         <p class=""><b>Senha: </b>{{$busca-> local}}</p>
                                                         <p class=""><b>Setor: </b>{{$busca-> descricao}}</p>
                                                         <p class=""><b>valor: </b>{{$busca-> valor}}</p>
-                                                        <p class=""><b>Quantidade: </b>{{$busca-> qtd}}</p>
+
+                                                        <b>Quantidade</b><span><input class="form-control" name="selectid"></span>
                                                         <a href="#" class="btn btn-primary">Adicionar</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    @endforeach
 
+                                    @endforeach
                                 </div>
 
                                 <!-- Controls -->

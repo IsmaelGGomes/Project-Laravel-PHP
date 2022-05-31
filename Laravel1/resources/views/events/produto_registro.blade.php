@@ -29,13 +29,7 @@
                         <label>valor</label>
                         <input type="" name="valor" class="form-control" id="" value="" placeholder="Valor do produto">
                     </div>
-                    <div class="form-group col-lg-6">
-                        <label for="imagem">Imagem do Produto</label>
-
-                        <input type="file" id="imagem" name="imagem" class="form-control-file">
-                    </div>
-
-
+                    
                     <div class="col-md-7">
                         <!--  <h3 class="dark-grey">Inserir Produto</h3> -->
                         <button class="btn btn-success">Adicionar</button>

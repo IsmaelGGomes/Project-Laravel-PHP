@@ -36,7 +36,7 @@
                         <th>Email</th>
                         <th>Senha</th>
                         <th>Setor</th>
-                        <th>Imagem</th>
+                        <th id="sel">Imagem</th>
                     </tr>
                     @foreach($logins as $event)
                         <tr>
@@ -54,7 +54,7 @@
                             <td>{{ $event->email }}<br></td>
                             <td>{{ $event->senha }}<br></td>
                             <td>{{ $event->setor }}<br></td>
-                            <td><img src="img/events/{{ $novo->imagem }}"></td>
+                            <td id="sel"><img src="img/events/{{ $event->imagem }}"></td>
                         </tr>
 
                     @endforeach
@@ -90,6 +90,7 @@
                                     <td>{{ $novo->email }}<br></td>
                                     <td>{{ $novo->senha }}<br></td>
                                     <td>{{ $novo->setor }}<br></td>
+                                    
                                     <div id="imagemselect">
                                     <td><img src="img/events/{{ $novo->imagem }}"></td>
                                     </div>

@@ -22,22 +22,8 @@ class ProdutoController extends Controller
         $cad->nome_produto = $request->nome_produto;
         $cad->local = $request->local;
         $cad->valor = $request->valor;
-        $cad->qtd = $request->qtd;
+     
         $cad->descricao = $request->descricao;
-
-        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()){
-
-            $requestImage = $request->imagem;
-
-            $extension = $requestImage->extension();
-            
-            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
-            
-            $requestImage->move(public_path('img/produtos'), $imageName);
-
-            $cad->imagem = $imageName;
-        }
-
 
         $cad->save();
 
