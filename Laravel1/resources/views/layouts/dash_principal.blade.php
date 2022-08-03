@@ -69,17 +69,22 @@
 
 
                             <div class="header-rightside">
+                                
                                 <ul class="list-inline header-top pull-right">
-                                    <li class="hidden-xs"><a href="/events/registro" class="add-project">Cadastrar</a></li>
-                                    <li>
-                                        <a href="#" class="icon-info">
-                                            <i class="fa fa-bell" aria-hidden="true"></i>
-                                            <span class="label label-primary"></span>
-                                        </a>
-                                    </li>
-                                    <!-- BOTAO DE LOG OUT -->
-                                    <li><a href="/login"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                                        @if (Route::has('events/registro'))  
+                                        <li class="hidden-xs"><a href="/events/registro" class="add-project">Cadastrar</a></li>
+                                        @endif
+                                        <li>
+                                            <a href="#" class="icon-info">
+                                                <i class="fa fa-bell" aria-hidden="true"></i>
+                                                <span class="label label-primary"></span>
+                                            </a>
+                                        </li>
+                                        <!-- BOTAO DE LOG OUT -->
+                                        <li><a href="/login"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                                    
                                 </ul>
+                                
                             </div>
                         </div>
                     </header>
