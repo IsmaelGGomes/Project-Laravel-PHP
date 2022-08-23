@@ -45,6 +45,13 @@ use Symfony\Component\VarDumper\VarDumper;
             margin: 0px auto; */
             
         }
+        .login-form{
+            height: 10px;
+            max-height: 50px;
+        }
+        #form-local {
+            
+        }
     </style>
 
     <center>
@@ -52,7 +59,7 @@ use Symfony\Component\VarDumper\VarDumper;
             <link rel="stylesheet" href="css/LOGIN2.css">
             <div class="col-md-6 col-sm-12">
                 <div class="login-form">
-                    <form action="/login" method="POST">
+                    <form action="/login" method="POST" id="form-local">
                         @csrf
                         <div class="form-group">
                             <label><b>E-mail</b></label>
@@ -80,7 +87,6 @@ use Symfony\Component\VarDumper\VarDumper;
             </div>
         </div>
     </center>
-
 </body>
 
 </html>
