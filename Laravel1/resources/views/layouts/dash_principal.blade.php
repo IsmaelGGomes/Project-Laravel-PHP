@@ -94,12 +94,13 @@
                                     @endif
                                 </div>
                             </div>
+                            @yield('content')
                         </main>
 
                     </div>
                 </div>
             </div>
-            @yield('content')
+            
         </div>
 
     </div>
