@@ -30,9 +30,10 @@
                         width:65%;
                     }
                 </style>
-                <form atcion="/events/editar" method="POST">
+                <h1><!-- Editando:  --></h1>
+                <form atcion="/editar-cadastro/{{ $file->id }}" method="POST" >
                     @csrf
-                    @method('PUT')
+                    <h2 >Editando cadastro de Nº {{ $file->id }}</h2>
                     <div class="form-group">
 
                         <br>
@@ -40,7 +41,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"> <i class="fa fa-user fa" aria-hidden="true"> </i> </span>
-                                <input type="text" name="nome" placeholder="Insira seu nome" />
+                                <input type="text" name="nome" placeholder="{{ $file->nome }}" />
                             </div>
                         </div>
                     </div>
@@ -49,7 +50,7 @@
                     <div class="cols-sm10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" name="email" placeholder="Insira seu email" />
+                            <input type="text" name="email" placeholder="{{ $file->email}}" />
                         </div>
                     </div>
 
@@ -58,7 +59,7 @@
                     <div class="cols-sm10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
-                            <input type="password" name="senha" placeholder="Insira sua senha" />
+                            <input type="password" name="senha" placeholder="{{ $file->senha }}" />
                         </div>
                     </div>
                     <br>
@@ -71,6 +72,7 @@
                             <option>Master</option>
                         </select>
                     </div>
+                    <br><br><br>
                     <button class="col-md-1,5 btn btn-success"> Editar Cadastro </button>
                     <br>
                 </form>

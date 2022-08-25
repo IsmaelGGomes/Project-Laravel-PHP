@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Login;
 
+use Illuminate\Support\Facades\Auth;
+
+
 class LoginController extends Controller
 {
     
@@ -23,15 +26,44 @@ class LoginController extends Controller
         $event->senha = $request->senha;
         $event->setor = $request->setor;
 
+        //imagem uploud
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+
+            $requestImage = $request->imagem;
+
+            $extension = $requestImage->extension();
+            
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+            
+            $requestImage->move(public_path('img/events'), $imageName);
+
+            $event->imagem = $imageName;
+        }
+
         $event->save();
 
-        return redirect('/listaLogin');
+        return redirect('/listaLogin')->with('msg', 'Evento criado com sucesso!');
+
+    }  
+
+    /* TELA DE LOGIN */
+
+    public function login(Request $request){
+        
+
+        if (Auth::attempt(['email' => $request->email, 'senha' => $request->password,'setor' => $request->setor ])) {
+          
+            dd('esta logado');
+        }else{
+            dd('não esta logado'); 
+        }
+
+        return view('paginas.login');
 
     }
 
-    public function login(){
+    public function show(){
         return view('paginas.login');
-
     }
 
     /* TELA DE REGISTROS DE USUARIOS*/
@@ -47,25 +79,36 @@ class LoginController extends Controller
             $loggers = Login::where([
                 ['nome', 'like', '%'.$busca.'%']
             ])->get();
-
+            $cont=1;
         }else{
             $loggers = Login::all();
+            $cont=0;
         }
-
-        return view('paginas.usuarios',['logins' => $loggers, 'busca' => $busca]);
+        
+        return view('paginas.usuarios',['logins' => $loggers, 'busca' => $busca, 'cont'=>$cont]);
     }
     
     /* TELA DE EDITAR USUARIOS*/
 
-    public function edits(){
-        return view('events.editar');
+    public function edits($id){
+
+        $quest = Login::find($id);
+
+        return view('events.editar', ['file' => $quest]);
     }
 
-    public function edit($id){
+    public function edit(Request $request, $id) {
         
-        $event = Login::findOrFail($id);
+        $quest = Login::find($id);
+        $quest ->update([
+            
+            'nome' => $request->nome,
+            'email' => $request->email,
+            'senha' => $request->senha,
+            'setor' => $request->setor,
+        ]);
 
-        return view('events.editar',['event' => $edit]);
+        return redirect('listaLogin')->with('msg','Cadastro Editado !');
     }
 
     /* TELA DE REGISTROS DE USUARIOS FORA */
@@ -84,7 +127,7 @@ class LoginController extends Controller
 
         $event->save();
 
-        return redirect('/registro');
+        return redirect('/login');
 
     }
 
@@ -98,5 +141,4 @@ class LoginController extends Controller
         return redirect('/listaLogin')->with('msg', 'Usuário excluído com sucesso !');
 
     }
-    
 }   

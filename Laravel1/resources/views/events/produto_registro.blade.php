@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form action="/cadastro" method="POST">
+<form action="/events/cadastroProdutos" method="POST">
     @csrf
 
     <div class="container-fluid">
@@ -29,16 +29,11 @@
                         <label>valor</label>
                         <input type="" name="valor" class="form-control" id="" value="" placeholder="Valor do produto">
                     </div>
-                    <div class="form-group col-lg-6">
-                        <label>Quantidade</label>
-                        <input type="" name="qtd" class="form-control" id="" value="" placeholder="Insira a quantidade">
-                    </div>
-
-
+                    
                     <div class="col-md-7">
                         <!--  <h3 class="dark-grey">Inserir Produto</h3> -->
                         <button class="btn btn-success">Adicionar</button>
-                        <a href="imprimir.php?=relatorio_de_itens_cadastrados"><button class="btn btn-warning" type="button">Relatório de Produtos</button></a>
+                        <a href="/events/impressao"><button class="btn btn-warning" type="button">Relatório de Produtos</button></a>
                     </div>
 
                 </div>

@@ -5,6 +5,8 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\LocalController;
+use App\Http\Controllers\CarroController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,9 +49,12 @@ Route::post('/evento',[LoginController::class,'store1']);
 
 Route::get('/events/registro',[LoginController::class,'registro']);
 
-//TELA DE LOGIN-------------------------------------------------
+//TELA DE LOGIN-------------------------------------------------->name('login')
 
-Route::get('/login',[LoginController::class,'login']);
+Route::post('/login',[LoginController::class,'login'])->name('login');
+
+Route::get('/login',[LoginController::class,'show'])->name('paginas.login');
+
 
 //TELA LISTA DE LOGIN
 
@@ -59,17 +64,19 @@ Route::get('/lista',[LoginController::class,'listagem']);
 
 //EVENTO DE EDITAR
 
-Route::get('/editar', [LoginController::class,'edits']);
+Route::get('/editar-cadastro/{id}', [LoginController::class,'edits']);
 
-Route::get('/listaLogin/{id}', [LoginController::class,'edit']);
-
-
+Route::post('/editar-cadastro/{id}', [LoginController::class,'edit']);
 
 //EVENTO DE CADASTRAR PRODUTO
 
 Route::get('/events/cadastroProdutos', [ProdutoController::class,'cadastroProduto']);
 
-Route::post('/cadastro',[ProdutoController::class,'produto']);
+Route::post('/events/cadastroProdutos',[ProdutoController::class,'produto']);
+
+//EVENTO DE IMPRIMIR O RELATORIO
+
+Route::get('/events/impressao',[ProdutoController::class,'imp']);
 
 //EVENTO DE DELETAR O CADASTRO
 
@@ -83,18 +90,29 @@ Route::get('/registro_usuario',[LoginController::class,'registro1']);
 
 //TELA FORMULÁRIO DE CONTATO
 
-Route::post('/listaLogin',[LocalController::class,'store3']);
+Route::post('/contato_index',[LocalController::class,'store3']);
 
 Route::get('/contato_index',[LocalController::class,'registro3']);
 
 Route::get('/contato_index',[LocalController::class,'proc']);
 
+//TELA DE HOME
+
+Route::get('/home', function () {
+    return view('layouts.dash_principal');
+});
+
+//TELA DE MARKET
+
+Route::get('/loja', function(){
+
+    return view('paginas.market');
+});
+
+Route::get('/loja',[ProdutoController::class,'query']);
 
 
+//EVENTO DE CARRINHO
+Route::post('/finalizar-compra',[CarroController::class,'store']);
 
-
-
-
-
-
-
+Route::get('/finalizar-compra',[CarroController::class,'show']);
